@@ -47,7 +47,7 @@ This project is maintained by an internal development team and follows professio
 ### Prerequisites
 
 - Windows OS
-- [.NET 8.0 Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
+- [.NET 10.0 Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
 
 ### Installation
 
@@ -156,7 +156,7 @@ EasySave/
 | Requirement | Detail |
 |---|---|
 | Language | C# |
-| Framework | .NET 8.0 |
+| Framework | .NET 10.0 |
 | IDE | Visual Studio 2022 or higher |
 | Version Control | GitHub |
 | UML Editor | ArgoUML (recommended) |
