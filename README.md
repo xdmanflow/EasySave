@@ -206,7 +206,7 @@ All contributions must go through the standard Git workflow:
 
 ## License
 
-Copyright (c) 2024 ProSoft. All rights reserved.
+Copyright (c) 2026 ProSoft. All rights reserved.
 
 This software and its source code are the exclusive property of ProSoft.
 Unauthorized copying, distribution, or modification of this software,
