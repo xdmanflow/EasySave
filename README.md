@@ -185,7 +185,15 @@ EasySave/
 
 ## Team & Contributions
 
-This project is developed internally at **ProSoft**. All contributions must go through the standard Git workflow:
+This project is developed internally at **ProSoft** by the following team:
+
+| Name | Role |
+|------|------|
+| Manil Doudou | Developer |
+| Youcef Djarir | Developer |
+| Isaac Sastre | Developer |
+
+All contributions must go through the standard Git workflow:
 
 1. Create a feature branch from `develop`: `feature/your-feature-name`
 2. Commit using the agreed format: `feat: description`, `fix: description`, `docs: description`
