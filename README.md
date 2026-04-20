@@ -143,7 +143,7 @@ EasySave/
 │   └── EasyLog.cs
 │
 └── docs/
-    ├── uml/                   # UML diagrams
+    ├── uml diagrams/                   # UML diagrams
     ├── user-manual.md
     ├── release-note.md
     └── technical-support.md
