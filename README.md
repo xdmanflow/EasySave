@@ -61,7 +61,7 @@ EasySave is a robust backup engine designed to handle critical data transfers ac
 
 ### Prerequisites
 - **OS:** Windows 10 / 11
-- **Framework:** [.NET 8.0 Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
+- **Framework:** [.NET 10.0 Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
 - **Tools:** `CryptoSoft.exe` (required for v2.0+)
 
 
@@ -70,7 +70,7 @@ EasySave is a robust backup engine designed to handle critical data transfers ac
 | Constraint | Requirement |
 | :--- | :--- |
 | **Language** | C# (English variables/comments) |
-| **Framework** | .NET 8.0 |
+| **Framework** | .NET 10.0 |
 | **IDE** | Visual Studio 2022 |
 | **Versioning** | Git / GitHub |
 | **Architecture** | MVVM for Graphical Interface |
