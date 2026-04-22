@@ -88,7 +88,7 @@ The logging system is a standalone **Dynamic Link Library** ensuring reuse acros
 ```text
 EasySave/
 ├── EasyLog/                # Shared Logging DLL (JSON/XML)
-├── EasySave/               # CLI Application (v1.0 & v1.1)
+├── EasySave/               # CLI Application (v1.0 - MVC)
 ├── EasySave.WPF/           # GUI Application (v2.0 - MVVM)
 ├── CryptoSoft/             # External Encryption Integration (v2.0)
 └── docs/                   # UML Diagrams, Release Notes, and Manuals
