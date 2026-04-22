@@ -42,7 +42,7 @@ EasySave is a robust backup engine designed to handle critical data transfers ac
 ### Version 1.0 — The Foundation
 * **CLI Execution:** Sequential (`1-3`) or selective (`1;3`) job execution via terminal.
 * **Dual Log Formats:** Users can choose between **JSON** or **XML** for daily logs via the `EasyLog.dll` library.
-* **Multi-language:** Native support for English and French.
+* **Multi-language:** Native support for English, French and Spanish.
 
 ### Version 2.0 — The Enterprise Update
 * **Graphical Interface:** Modern UI built using the **MVVM architecture**.
@@ -113,5 +113,5 @@ This project is maintained by the **ProSoft Development Team**:
 ## License
 
 Copyright © 2026 **ProSoft**. All rights reserved. 
-This software is proprietary. Unauthorized copying, distribution, or modification is strictly prohibited.
+This software is proprietary. Unauthorized copying, distribution, or modification is prohibited.
 ```
