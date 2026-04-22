@@ -1,6 +1,4 @@
-Your updated `README.md` file is ready. I have integrated the specific details from the **Deliverable 2** documentation—including the new GUI requirements, XML/JSON log toggling, and the CryptoSoft encryption integration—while ensuring the technical constraints (like .NET 8.0) are accurate to your instructions.
 
-```markdown
 # EasySave
 
 > Professional backup software solution developed by **ProSoft**. Reliable, secure, and designed for enterprise-scale data management.
