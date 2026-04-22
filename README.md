@@ -1,11 +1,10 @@
-
 # EasySave
 
-> Professional backup software solution developed by **ProSoft**. Reliable, secure, and designed for enterprise-scale data management.
+> Professional backup software solution developed by **ProSoft**. Reliable, secure, and built for enterprise data management.
 
 ---
 
-## 📑 Table of Contents
+## Table of Contents
 
 - [About the Project](#about-the-project)
 - [Versioning Roadmap](#versioning-roadmap)
@@ -13,77 +12,60 @@
 - [Getting Started](#getting-started)
 - [Technical Requirements](#technical-requirements)
 - [Project Structure](#project-structure)
-- [Documentation](#documentation)
 - [Team & Contributions](#team--contributions)
 - [License](#license)
 
 ---
 
-## 🏢 About the Project
+## About the Project
 
-EasySave is the flagship backup component of the **ProSoft Suite**. It provides a robust engine for managing backup jobs across local disks, external drives, and network paths. 
+EasySave is a robust backup engine designed to handle critical data transfers across local, external, and network drives. It is a core component of the **ProSoft Suite**.
 
-**Pricing & Maintenance:**
+**Commercial Terms:**
 - **Unit Price:** €200 (excl. tax)
-- **Annual Maintenance:** 12% of purchase price (includes 5/7 support from 8am–5pm and all version updates).
+- **Maintenance:** 12% of purchase price annually (includes 5/7 support and all updates).
 
 ---
 
-## 🗺️ Versioning Roadmap
+## Versioning Roadmap
 
-| Version | Type | Status | Key Focus |
+| Version | Type | Focus | Status |
 | :--- | :--- | :--- | :--- |
-| **v1.0** | Console | ✅ Released | Core engine, 5-job limit, JSON logs. |
-| **v1.1** | Console | 🛠️ In Dev | **XML/JSON log selection** for legacy systems. |
-| **v2.0** | GUI | 🛠️ In Dev | **WPF/MVVM interface**, unlimited jobs, **CryptoSoft** encryption. |
-| **v3.0** | GUI | 🔒 Planned | Real-time task controls (Play, Pause, Stop). |
+| **v1.0** | Console | Core CLI engine, 5-job limit, **JSON/XML logs**. | ✅ Released |
+| **v2.0** | GUI | **WPF/MVVM**, **CryptoSoft** encryption, Business software detection. | 🛠️ In Dev |
+| **v3.0** | GUI | Advanced controls (**Play/Pause/Stop**) & presentation build. | 🔒 Planned |
 
 ---
 
-## ✨ Key Features
+## Key Features
 
-### v1.1 — The "Compatibility" Update
-* **Log Format Choice:** Support for both **JSON** and **XML** formats for daily logs, allowing integration with diverse client parsing tools.
-* **CLI Heritage:** Maintains the high-performance console interface for server environments.
+### Version 1.0 — The Foundation
+* **CLI Execution:** Sequential (`1-3`) or selective (`1;3`) job execution via terminal.
+* **Dual Log Formats:** Users can choose between **JSON** or **XML** for daily logs via the `EasyLog.dll` library.
+* **Multi-language:** Native support for English and French.
 
-### v2.0 — The "Enterprise" Update
-* **Graphical User Interface:** Modern interface built using **WPF** and **MVVM architecture**.
-* **Scalability:** Removal of the 5-job limit; support for **unlimited backup jobs**.
-* **CryptoSoft Integration:** * Secure encryption for files with user-defined extensions.
-    * Records encryption time (ms) in the daily log file.
-* **Business Software Monitoring:** * Detects if specific "Business Software" (e.g., accounting tools or calculators) is running.
-    * Automatically prevents or pauses backups to protect data integrity during active work sessions.
+### Version 2.0 — The Enterprise Update
+* **Graphical Interface:** Modern UI built using the **MVVM architecture**.
+* **Unlimited Jobs:** Removal of the 5-job restriction.
+* **CryptoSoft Integration:** * High-security encryption for files with user-defined extensions.
+  * Encryption duration (ms) recorded in logs.
+* **Business Software Monitoring:** * Automatically detects active business software (e.g., accounting tools).
+  * Suspends/prevents backups during business software activity to ensure data consistency.
+
+### Version 3.0 — The "Real-Time" Update
+* **Job Control:** Implementation of real-time interaction (Play, Pause, Stop) for each backup task.
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
-- **Operating System:** Windows 10 / 11
+- **OS:** Windows 10 / 11
 - **Framework:** [.NET 8.0 Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
-- **Encryption Tool:** `CryptoSoft.exe` (required for v2.0 features)
+- **Tools:** `CryptoSoft.exe` (required for v2.0+)
 
-### Installation
-```bash
-# Clone the repository
-git clone [https://github.com/prosoft-dev/EasySave.git](https://github.com/prosoft-dev/EasySave.git)
 
-# Build the solution
-dotnet build
-```
-
-### Usage (Console Mode)
-```bash
-# Sequential execution (Jobs 1 through 3)
-EasySave.exe 1-3
-
-# Specific selection (Jobs 1 and 3)
-EasySave.exe 1;3
-```
-
----
-
-## 🛠️ Technical Requirements
+## Technical Requirements
 
 | Constraint | Requirement |
 | :--- | :--- |
@@ -101,7 +83,7 @@ The logging system is a standalone **Dynamic Link Library** ensuring reuse acros
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```text
 EasySave/
@@ -114,7 +96,7 @@ EasySave/
 
 ---
 
-## 👥 Team & Contributions
+## Team & Contributions
 
 This project is maintained by the **ProSoft Development Team**:
 - **Manil Doudou**
