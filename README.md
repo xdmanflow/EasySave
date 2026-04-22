@@ -31,9 +31,9 @@ EasySave is a robust backup engine designed to handle critical data transfers ac
 
 | Version | Type | Focus | Status |
 | :--- | :--- | :--- | :--- |
-| **v1.0** | Console | Core CLI engine, 5-job limit, **JSON/XML logs**. | ✅ Released |
-| **v2.0** | GUI | **WPF/MVVM**, **CryptoSoft** encryption, Business software detection. | 🛠️ In Dev |
-| **v3.0** | GUI | Advanced controls (**Play/Pause/Stop**) & presentation build. | 🔒 Planned |
+| **v1.0** | Console | Core CLI engine, 5-job limit, **JSON/XML logs**. | Released |
+| **v2.0** | GUI | **WPF/MVVM**, **CryptoSoft** encryption, Business software detection. | In Dev |
+| **v3.0** | GUI | Advanced controls (**Play/Pause/Stop**) & presentation build. | Planned |
 
 ---
 
