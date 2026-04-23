@@ -113,5 +113,5 @@ This project is maintained by the **ProSoft Development Team**:
 ## License
 
 Copyright © 2026 **ProSoft**. All rights reserved. 
-This software is proprietary. Unauthorized copying, distribution, or modification is prohibited.
+This software is proprietary. Unauthorized copying, distribution, or modification is strictly prohibited.
 ```
