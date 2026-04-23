@@ -165,7 +165,7 @@ Each backup job requires:
 | Constraint | Requirement |
 |------------|-------------|
 | Language | C# — all code, comments, and variables in English |
-| Framework | .NET 8.0 |
+| Framework | .NET 10.0 |
 | IDE | Visual Studio 2022 or higher |
 | Versioning | Git / GitHub |
 | Architecture | MVC for v1.x — MVVM for v2.x and above |
