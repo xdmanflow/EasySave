@@ -2,12 +2,6 @@
 
 > Professional backup software solution developed by **ProSoft** — built for enterprise data management.
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue)
-![Build](https://img.shields.io/badge/build-passing-brightgreen)
-![License](https://img.shields.io/badge/license-yellow)
-![Framework](https://img.shields.io/badge/.NET-10.0-red)
-![Language](https://img.shields.io/badge/language-C%23-239120)
-
 ---
 
 ## Table of Contents
