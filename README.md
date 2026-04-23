@@ -46,8 +46,8 @@ Built with scalability and maintainability in mind, EasySave evolves across thre
 
 | Version | Interface | Focus | Status |
 |---------|-----------|-------|--------|
-| **v1.0** | Console | Core CLI engine, up to 5 backup jobs, JSON logs, EasyLog DLL | Released |
-| **v1.1** | Console | XML log format support, backward compatible with v1.0 | Released |
+| **v1.0** | Console (MVC) | Core CLI engine, up to 5 backup jobs, JSON logs, EasyLog DLL | Released |
+| **v1.1** | Console (MVC) | XML log format support, backward compatible with v1.0 | Released |
 | **v2.0** | GUI (WPF/MVVM) | Unlimited jobs, CryptoSoft encryption, business software detection | In Dev |
 | **v3.0** | GUI (WPF/MVVM) | Real-time job controls (Play / Pause / Stop), presentation build | Planned |
 
