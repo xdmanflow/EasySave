@@ -57,7 +57,7 @@ Built with scalability and maintainability in mind, EasySave evolves across thre
 
 ### Version 1.0 — The Foundation
 
-- **Console Application** built on .NET 8.0
+- **Console Application** built on .NET 10.0
 - **Up to 5 backup jobs**, each defined by name, source directory, target directory, and type (full or differential)
 - **CLI Execution** — sequential (`EasySave.exe 1-3`) or selective (`EasySave.exe 1;3`) job execution
 - **Multi-source Support** — local disks, external drives, and network drives
@@ -98,7 +98,7 @@ Built with scalability and maintainability in mind, EasySave evolves across thre
 ### Prerequisites
 
 - **OS**: Windows 10 / 11
-- **Framework**: .NET 8.0 Runtime
+- **Framework**: .NET 10.0 Runtime
 - **IDE**: Visual Studio 2022 or higher
 - **External Tool**: `CryptoSoft.exe` *(required for v2.0 and above)*
 
