@@ -5,7 +5,7 @@
 ![Version](https://img.shields.io/badge/version-1.0.0-blue)
 ![Build](https://img.shields.io/badge/build-passing-brightgreen)
 ![License](https://img.shields.io/badge/license-Proprietary-red)
-![Framework](https://img.shields.io/badge/.NET-8.0-purple)
+![Framework](https://img.shields.io/badge/.NET-10.0-purple)
 ![Language](https://img.shields.io/badge/language-C%23-239120)
 
 ---
