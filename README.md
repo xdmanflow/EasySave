@@ -224,7 +224,7 @@ EasySave/
 │   ├── EasySave/               # Core application (v1.x CLI / v2.x GUI)
 │   └── EasyLog/                # Shared logging DLL (JSON & XML)
 ├── docs/
-│   └── diagrams/           # UML diagrams per deliverable
+│   └── diagrams/               # UML diagrams per deliverable
 ├── tests/
 │   └── unit-tests/             # Unit and integration tests
 ├── .gitignore
