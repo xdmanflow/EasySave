@@ -63,7 +63,7 @@ Built with scalability and maintainability in mind, EasySave evolves across thre
 - **Multi-source Support** — local disks, external drives, and network drives
 - **Daily Log File** via `EasyLog.dll` — records timestamp, file paths (UNC format), file size, and transfer time in milliseconds
 - **Real-time State File** (`state.json`) — tracks progress, remaining files, and current action per job
-- **Multi-language Support** — English and French at a minimum
+- **Multi-language Support** — English and French at a minimum (Spanish has been added)
 - **JSON format** for all log, state, and configuration files with line breaks for readability
 
 ### Version 1.1 — The Compatibility Update
