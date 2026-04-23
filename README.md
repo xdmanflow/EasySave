@@ -1,6 +1,6 @@
 # EasySave
 
-> Professional backup software solution developed by **ProSoft** — reliable, secure, and built for enterprise data management.
+> Professional backup software solution developed by **ProSoft** — built for enterprise data management.
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue)
 ![Build](https://img.shields.io/badge/build-passing-brightgreen)
