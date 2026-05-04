@@ -15,18 +15,23 @@ namespace EasySave
 
         static void Main(string[] args)
         {
-            string root     = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "EasySave");
-            string logsDir  = Path.Combine(root, "Logs");
+            string root = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "EasySave");
+            string logsDir = Path.Combine(root, "Logs");
             string stateDir = Path.Combine(root, "State");
             string langFile = Path.Combine(root, "lang.txt");
 
-            var config   = new ConfigManager();
-            var jobs     = config.LoadJobs();
+            var config = new ConfigManager();
+            var appSettings = config.LoadConfig(); // Load the new wrapper
+            var jobs = appSettings.Jobs;
+            var format = appSettings.LogFormat;
+
             var langCode = File.Exists(langFile) ? File.ReadAllText(langFile).Trim() : "en";
-            var lang     = new LanguageManager(langCode);
-            var daily    = new DailyLogger(logsDir);
-            var state    = new StateLogger(stateDir, jobs.Select(j => j.Name));
-            var manager  = new BackupManager(jobs, daily, state, lang);
+            var lang = new LanguageManager(langCode);
+
+            // Inject the configured format into the loggers
+            var daily = new DailyLogger(logsDir, format);
+            var state = new StateLogger(stateDir, jobs.Select(j => j.Name), format);
+            var manager = new BackupManager(jobs, daily, state, lang);
 
             if (args.Length == 1)
             {
@@ -47,6 +52,7 @@ namespace EasySave
                 Console.WriteLine(lang.Get("menu_run_one"));
                 Console.WriteLine(lang.Get("menu_run_all"));
                 Console.WriteLine(lang.Get("menu_language"));
+                Console.WriteLine(lang.Get("menu_log_format"));
                 Console.WriteLine(lang.Get("menu_exit"));
                 Console.WriteLine();
                 Console.Write(lang.Get("menu_choice"));
@@ -82,14 +88,14 @@ namespace EasySave
 
                         jobs.Add(new BackupJob
                         {
-                            Name            = name,
+                            Name = name,
                             SourceDirectory = src,
                             TargetDirectory = tgt,
-                            Type            = typeIn == "2" ? BackupType.Differential : BackupType.Full
+                            Type = typeIn == "2" ? BackupType.Differential : BackupType.Full
                         });
 
-                        config.SaveJobs(jobs);
-                        state   = new StateLogger(stateDir, jobs.Select(j => j.Name));
+                        config.SaveConfig(appSettings); // Save updated settings
+                        state = new StateLogger(stateDir, jobs.Select(j => j.Name), format);
                         manager = new BackupManager(jobs, daily, state, lang);
 
                         Console.WriteLine(lang.Get("add_success", name));
@@ -104,8 +110,8 @@ namespace EasySave
                         {
                             string deleted = jobs[di - 1].Name;
                             jobs.RemoveAt(di - 1);
-                            config.SaveJobs(jobs);
-                            state   = new StateLogger(stateDir, jobs.Select(j => j.Name));
+                            config.SaveConfig(appSettings); // Save updated settings
+                            state = new StateLogger(stateDir, jobs.Select(j => j.Name), format);
                             manager = new BackupManager(jobs, daily, state, lang);
                             Console.WriteLine(lang.Get("delete_success", deleted));
                         }
@@ -136,10 +142,36 @@ namespace EasySave
                         {
                             langCode = input;
                             File.WriteAllText(langFile, langCode);
-                            lang    = new LanguageManager(langCode);
+                            lang = new LanguageManager(langCode);
                             manager = new BackupManager(jobs, daily, state, lang);
                         }
                         else Console.WriteLine(lang.Get("invalid_choice"));
+                        Pause(lang);
+                        break;
+
+                    case "7":
+                        // New Case for Log Format Switching
+                        Console.WriteLine($"Current format: {appSettings.LogFormat}");
+                        Console.Write(lang.Get("log_format_prompt"));
+                        string? fmtInput = Console.ReadLine()?.Trim();
+
+                        if (fmtInput == "1" || fmtInput == "2")
+                        {
+                            format = fmtInput == "2" ? LogFormat.XML : LogFormat.JSON;
+                            appSettings.LogFormat = format;
+                            config.SaveConfig(appSettings);
+
+                            // Re-instantiate the loggers and manager to apply the new format
+                            daily = new DailyLogger(logsDir, format);
+                            state = new StateLogger(stateDir, jobs.Select(j => j.Name), format);
+                            manager = new BackupManager(jobs, daily, state, lang);
+
+                            Console.WriteLine(lang.Get("log_format_success"));
+                        }
+                        else
+                        {
+                            Console.WriteLine(lang.Get("invalid_choice"));
+                        }
                         Pause(lang);
                         break;
 

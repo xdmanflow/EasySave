@@ -19,21 +19,33 @@ namespace EasySave.Config
             _path = Path.Combine(dir, "config.json");
         }
 
-        public List<BackupJob> LoadJobs()
+        public AppSettings LoadConfig()
         {
-            if (!File.Exists(_path)) return new List<BackupJob>();
+            if (!File.Exists(_path)) return new AppSettings();
 
+            string jsonStr = File.ReadAllText(_path);
             try
             {
-                return JsonSerializer.Deserialize<List<BackupJob>>(File.ReadAllText(_path), _json) ?? new();
+                // Try to load as v1.1 AppSettings
+                return JsonSerializer.Deserialize<AppSettings>(jsonStr, _json) ?? new AppSettings();
             }
             catch (JsonException)
             {
-                return new List<BackupJob>();
+                try
+                {
+                    // Fallback: If it fails, it might be a v1.0 config (just a JSON array of jobs).
+                    // Migrate it to the new AppSettings format.
+                    var legacyJobs = JsonSerializer.Deserialize<List<BackupJob>>(jsonStr, _json) ?? new List<BackupJob>();
+                    return new AppSettings { Jobs = legacyJobs };
+                }
+                catch
+                {
+                    return new AppSettings();
+                }
             }
         }
 
-        public void SaveJobs(List<BackupJob> jobs) =>
-            File.WriteAllText(_path, JsonSerializer.Serialize(jobs, _json));
+        public void SaveConfig(AppSettings settings) =>
+            File.WriteAllText(_path, JsonSerializer.Serialize(settings, _json));
     }
 }
