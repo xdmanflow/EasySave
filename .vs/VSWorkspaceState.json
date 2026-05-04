@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+<<<<<<< HEAD
+    "\\docs",
+    "\\docs\\uml diagrams"
+=======
+    "\\src",
+    "\\src\\EasyLog"
+>>>>>>> 1dea30fd6dd61d7169799613c5e91fda619e838e
+  ],
+  "PreviewInSolutionExplorer": false
+}

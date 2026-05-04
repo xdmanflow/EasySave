@@ -1,0 +1,14 @@
+{
+  "version": 2,
+<<<<<<< HEAD
+  "dgSpecHash": "8F9YsYf1PJo=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\manil\\Downloads\\EasySave\\src\\EasySave\\EasySave.csproj",
+=======
+  "dgSpecHash": "tnx6tjJpTuk=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\manil\\Desktop\\EasySave\\EasySave\\src\\EasySave\\EasySave.csproj",
+>>>>>>> 1dea30fd6dd61d7169799613c5e91fda619e838e
+  "expectedPackageFiles": [],
+  "logs": []
+}
