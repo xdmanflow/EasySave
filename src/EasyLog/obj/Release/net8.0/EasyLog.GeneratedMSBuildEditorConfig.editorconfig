@@ -10,7 +10,11 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = EasyLog
+<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\manil\Desktop\EasySave\src\EasyLog\
+=======
+build_property.ProjectDir = C:\Users\OKO J.M\Downloads\EasySave (1)\EasySave\src\EasyLog\
+>>>>>>> 1dea30fd6dd61d7169799613c5e91fda619e838e
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.EffectiveAnalysisLevelStyle = 8.0
