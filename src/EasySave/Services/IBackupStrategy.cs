@@ -5,6 +5,6 @@ namespace EasySave.Services
 {
     public interface IBackupStrategy
     {
-        void Execute(BackupJob job, DailyLogger dailyLogger, StateLogger stateLogger);
+        void Execute(BackupJob job, DailyLogger dailyLogger, StateLogger stateLogger, AppSettings settings);
     }
 }

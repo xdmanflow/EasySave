@@ -13,45 +13,37 @@ namespace EasySave
         private readonly DailyLogger _daily;
         private readonly StateLogger _state;
         private readonly LanguageManager _lang;
+        private readonly AppSettings _settings;
 
-        public BackupManager(List<BackupJob> jobs, DailyLogger daily, StateLogger state, LanguageManager lang)
+        public BackupManager(
+            List<BackupJob> jobs, DailyLogger daily,
+            StateLogger state, LanguageManager lang, AppSettings settings)
         {
-            _jobs  = jobs;
+            _jobs = jobs;
             _daily = daily;
             _state = state;
-            _lang  = lang;
+            _lang = lang;
+            _settings = settings;
         }
 
         public void RunJob(int index)
         {
             var job = _jobs[index];
-            Console.WriteLine(_lang.Get("run_start", job.Name));
+
+            if (BusinessSoftwareDetector.IsRunning(_settings.BusinessSoftware))
+                throw new InvalidOperationException($"Job '{job.Name}' stopped: business software detected.");
 
             IBackupStrategy strategy = job.Type == BackupType.Full
                 ? new FullBackupStrategy()
-                : (IBackupStrategy)new DifferentialBackupStrategy();
+                : new DifferentialBackupStrategy();
 
-            try
-            {
-                strategy.Execute(job, _daily, _state);
-                Console.WriteLine(_lang.Get("run_done", job.Name));
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(_lang.Get("run_error", job.Name, ex.Message));
-            }
+            strategy.Execute(job, _daily, _state, _settings);
         }
 
         public void RunAllJobs()
         {
-            if (_jobs.Count == 0)
-            {
-                Console.WriteLine(_lang.Get("run_all_none"));
-                return;
-            }
-
-            for (int i = 0; i < _jobs.Count; i++)
-                RunJob(i);
+            if (_jobs.Count == 0) { Console.WriteLine(_lang.Get("run_all_none")); return; }
+            for (int i = 0; i < _jobs.Count; i++) RunJob(i);
         }
 
         public void RunFromArgument(string arg)
@@ -70,7 +62,9 @@ namespace EasySave
             if (arg.Contains('-'))
             {
                 var parts = arg.Split('-');
-                if (parts.Length == 2 && int.TryParse(parts[0], out int from) && int.TryParse(parts[1], out int to))
+                if (parts.Length == 2
+                    && int.TryParse(parts[0], out int from)
+                    && int.TryParse(parts[1], out int to))
                     for (int i = from; i <= to; i++) yield return i;
             }
             else

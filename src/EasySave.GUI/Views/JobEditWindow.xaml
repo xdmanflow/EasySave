@@ -1,0 +1,62 @@
+<Window x:Class="EasySave.GUI.Views.JobEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Backup Job" Height="280" Width="520"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="130"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Name -->
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Job name:"
+                   VerticalAlignment="Center" Margin="0,6"/>
+        <TextBox   Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"
+                   Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"
+                   Margin="0,6"/>
+
+        <!-- Source -->
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Source directory:"
+                   VerticalAlignment="Center" Margin="0,6"/>
+        <TextBox   Grid.Row="1" Grid.Column="1"
+                   Text="{Binding SourceDirectory, UpdateSourceTrigger=PropertyChanged}"
+                   Margin="0,6"/>
+        <Button    Grid.Row="1" Grid.Column="2" Content="..." Width="30"
+                   Click="BrowseSource_Click" Margin="6,6,0,6"/>
+
+        <!-- Target -->
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Target directory:"
+                   VerticalAlignment="Center" Margin="0,6"/>
+        <TextBox   Grid.Row="2" Grid.Column="1"
+                   Text="{Binding TargetDirectory, UpdateSourceTrigger=PropertyChanged}"
+                   Margin="0,6"/>
+        <Button    Grid.Row="2" Grid.Column="2" Content="..." Width="30"
+                   Click="BrowseTarget_Click" Margin="6,6,0,6"/>
+
+        <!-- Type -->
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="Backup type:"
+                   VerticalAlignment="Center" Margin="0,6"/>
+        <ComboBox  Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2"
+                   SelectedItem="{Binding Type}"
+                   ItemsSource="{Binding BackupTypes}"
+                   Margin="0,6"/>
+
+        <!-- Buttons -->
+        <StackPanel Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3"
+                    Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
+            <Button Content="Save"   Click="Save_Click"   Width="80" Margin="0,0,10,0"/>
+            <Button Content="Cancel" Click="Cancel_Click" Width="80"/>
+        </StackPanel>
+    </Grid>
+</Window>
