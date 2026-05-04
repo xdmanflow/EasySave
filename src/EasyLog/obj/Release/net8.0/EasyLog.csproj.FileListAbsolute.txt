@@ -1,0 +1,11 @@
+C:\Users\manil\Desktop\EasySave\EasySave\EasyLog\bin\Release\net8.0\EasyLog.deps.json
+C:\Users\manil\Desktop\EasySave\EasySave\EasyLog\bin\Release\net8.0\EasyLog.dll
+C:\Users\manil\Desktop\EasySave\EasySave\EasyLog\bin\Release\net8.0\EasyLog.pdb
+C:\Users\manil\Desktop\EasySave\EasySave\EasyLog\obj\Release\net8.0\EasyLog.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\manil\Desktop\EasySave\EasySave\EasyLog\obj\Release\net8.0\EasyLog.AssemblyInfoInputs.cache
+C:\Users\manil\Desktop\EasySave\EasySave\EasyLog\obj\Release\net8.0\EasyLog.AssemblyInfo.cs
+C:\Users\manil\Desktop\EasySave\EasySave\EasyLog\obj\Release\net8.0\EasyLog.csproj.CoreCompileInputs.cache
+C:\Users\manil\Desktop\EasySave\EasySave\EasyLog\obj\Release\net8.0\EasyLog.dll
+C:\Users\manil\Desktop\EasySave\EasySave\EasyLog\obj\Release\net8.0\refint\EasyLog.dll
+C:\Users\manil\Desktop\EasySave\EasySave\EasyLog\obj\Release\net8.0\EasyLog.pdb
+C:\Users\manil\Desktop\EasySave\EasySave\EasyLog\obj\Release\net8.0\ref\EasyLog.dll
