@@ -1,0 +1,179 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="780" viewBox="0 0 900 780" font-family="Arial, sans-serif" font-size="13">
+  <style>
+    .pill-blue { fill: #daeeff; stroke: #5b9bd5; stroke-width: 1; }
+    .pill-green { fill: #d0f5e8; stroke: #27ae60; stroke-width: 1; }
+    .pill-purple { fill: #e8d8ff; stroke: #9070d0; stroke-width: 1.2; }
+    .section { fill: #fffde0; stroke: #d4b800; stroke-width: 1; }
+    .system { fill: #fffff0; stroke: #c8c800; stroke-width: 1.5; }
+    .conn { stroke: #888; stroke-width: 0.7; fill: none; }
+    .dashed { stroke: #888; stroke-width: 0.7; fill: none; stroke-dasharray: 5 3; }
+    .lbl { font-size: 11px; fill: #555; }
+    .sec-title { font-size: 12px; font-weight: bold; fill: #444; }
+    .actor-lbl { font-size: 12px; fill: #333; text-anchor: middle; }
+  </style>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M1 1L9 5L1 9" fill="none" stroke="#555" stroke-width="1.2"/>
+    </marker>
+  </defs>
+
+  <!-- System boundary -->
+  <rect x="110" y="10" width="770" height="720" rx="8" class="system"/>
+  <text x="495" y="30" text-anchor="middle" font-size="14" fill="#555">EasySave v3.0</text>
+
+  <!-- Actor -->
+  <ellipse cx="55" cy="380" rx="48" ry="22" fill="#5b9bd5" stroke="#2e6fa3" stroke-width="1.2"/>
+  <text x="55" y="384" text-anchor="middle" font-size="12" fill="white" font-weight="bold">User</text>
+
+  <!-- Actor lines to GUI -->
+  <line x1="103" y1="368" x2="130" y2="80" class="conn" marker-end="url(#arr)"/>
+  <line x1="103" y1="371" x2="130" y2="112" class="conn" marker-end="url(#arr)"/>
+  <line x1="103" y1="374" x2="130" y2="144" class="conn" marker-end="url(#arr)"/>
+  <line x1="103" y1="377" x2="130" y2="176" class="conn" marker-end="url(#arr)"/>
+  <line x1="103" y1="380" x2="130" y2="220" class="conn" marker-end="url(#arr)"/>
+  <line x1="103" y1="383" x2="130" y2="252" class="conn" marker-end="url(#arr)"/>
+  <line x1="103" y1="386" x2="130" y2="284" class="conn" marker-end="url(#arr)"/>
+  <line x1="103" y1="389" x2="130" y2="316" class="conn" marker-end="url(#arr)"/>
+  <line x1="103" y1="392" x2="130" y2="360" class="conn" marker-end="url(#arr)"/>
+  <line x1="103" y1="395" x2="130" y2="392" class="conn" marker-end="url(#arr)"/>
+  <line x1="103" y1="398" x2="130" y2="424" class="conn" marker-end="url(#arr)"/>
+  <line x1="103" y1="401" x2="130" y2="456" class="conn" marker-end="url(#arr)"/>
+  <line x1="103" y1="404" x2="130" y2="540" class="conn" marker-end="url(#arr)"/>
+  <line x1="103" y1="407" x2="130" y2="572" class="conn" marker-end="url(#arr)"/>
+  <line x1="103" y1="410" x2="130" y2="604" class="conn" marker-end="url(#arr)"/>
+  <line x1="103" y1="413" x2="130" y2="636" class="conn" marker-end="url(#arr)"/>
+
+  <!-- GUI Section -->
+  <rect x="120" y="44" width="210" height="640" rx="5" class="section"/>
+  <text x="225" y="60" text-anchor="middle" class="sec-title">GUI (WPF)</text>
+
+  <!-- Backup jobs management -->
+  <ellipse cx="225" cy="80" rx="82" ry="14" class="pill-blue"/>
+  <text x="225" y="84" text-anchor="middle" font-size="11">Add backup job</text>
+
+  <ellipse cx="225" cy="112" rx="82" ry="14" class="pill-blue"/>
+  <text x="225" y="116" text-anchor="middle" font-size="11">Edit backup job</text>
+
+  <ellipse cx="225" cy="144" rx="82" ry="14" class="pill-blue"/>
+  <text x="225" y="148" text-anchor="middle" font-size="11">Delete backup job</text>
+
+  <ellipse cx="225" cy="176" rx="82" ry="14" class="pill-blue"/>
+  <text x="225" y="180" text-anchor="middle" font-size="11">Open settings</text>
+
+  <!-- Job execution controls -->
+  <line x1="120" y1="200" x2="330" y2="200" stroke="#ccc" stroke-width="0.6" stroke-dasharray="4 3"/>
+
+  <ellipse cx="225" cy="220" rx="82" ry="14" class="pill-green"/>
+  <text x="225" y="224" text-anchor="middle" font-size="11">Run job(s) in parallel</text>
+
+  <ellipse cx="225" cy="252" rx="82" ry="14" class="pill-green"/>
+  <text x="225" y="256" text-anchor="middle" font-size="11">Pause job(s)</text>
+
+  <ellipse cx="225" cy="284" rx="82" ry="14" class="pill-green"/>
+  <text x="225" y="288" text-anchor="middle" font-size="11">Resume job(s)</text>
+
+  <ellipse cx="225" cy="316" rx="82" ry="14" class="pill-green"/>
+  <text x="225" y="320" text-anchor="middle" font-size="11">Stop job(s)</text>
+
+  <ellipse cx="225" cy="360" rx="82" ry="14" class="pill-green"/>
+  <text x="225" y="364" text-anchor="middle" font-size="11">Monitor progress %</text>
+
+  <!-- Settings -->
+  <line x1="120" y1="384" x2="330" y2="384" stroke="#ccc" stroke-width="0.6" stroke-dasharray="4 3"/>
+
+  <ellipse cx="225" cy="392" rx="82" ry="14" class="pill-green"/>
+  <text x="225" y="396" text-anchor="middle" font-size="11">Set priority extensions</text>
+
+  <ellipse cx="225" cy="424" rx="82" ry="14" class="pill-green"/>
+  <text x="225" y="428" text-anchor="middle" font-size="11">Set n KB file limit</text>
+
+  <ellipse cx="225" cy="456" rx="82" ry="14" class="pill-green"/>
+  <text x="225" y="460" text-anchor="middle" font-size="11">Configure Docker mode</text>
+
+  <!-- Language and log -->
+  <line x1="120" y1="480" x2="330" y2="480" stroke="#ccc" stroke-width="0.6" stroke-dasharray="4 3"/>
+
+  <ellipse cx="225" cy="540" rx="82" ry="14" class="pill-blue"/>
+  <text x="225" y="544" text-anchor="middle" font-size="11">Switch language</text>
+
+  <ellipse cx="225" cy="572" rx="82" ry="14" class="pill-blue"/>
+  <text x="225" y="576" text-anchor="middle" font-size="11">Switch log format</text>
+
+  <ellipse cx="225" cy="604" rx="82" ry="14" class="pill-blue"/>
+  <text x="225" y="608" text-anchor="middle" font-size="11">Run from CLI arg</text>
+
+  <ellipse cx="225" cy="636" rx="82" ry="14" class="pill-blue"/>
+  <text x="225" y="640" text-anchor="middle" font-size="11">Set CryptoSoft path</text>
+
+  <!-- Backup Engine Section -->
+  <rect x="350" y="44" width="230" height="580" rx="5" class="section"/>
+  <text x="465" y="60" text-anchor="middle" class="sec-title">Backup Engine (auto)</text>
+
+  <ellipse cx="465" cy="90" rx="98" ry="14" class="pill-green"/>
+  <text x="465" y="94" text-anchor="middle" font-size="11">Parallel execution</text>
+
+  <ellipse cx="465" cy="140" rx="98" ry="14" class="pill-blue"/>
+  <text x="465" y="144" text-anchor="middle" font-size="11">Check biz software</text>
+
+  <ellipse cx="465" cy="172" rx="98" ry="14" class="pill-green"/>
+  <text x="465" y="176" text-anchor="middle" font-size="11">Pause on detection</text>
+
+  <ellipse cx="465" cy="204" rx="98" ry="14" class="pill-green"/>
+  <text x="465" y="208" text-anchor="middle" font-size="11">Auto-resume backup</text>
+
+  <!-- extends bracket -->
+  <path d="M563 140 L570 140 L570 204 L563 204" fill="none" stroke="#aaa" stroke-width="0.7" stroke-dasharray="3 2"/>
+  <text x="573" y="175" font-size="10" fill="#777">extends</text>
+
+  <ellipse cx="465" cy="254" rx="98" ry="14" class="pill-green"/>
+  <text x="465" y="258" text-anchor="middle" font-size="11">Priority file check</text>
+
+  <ellipse cx="465" cy="286" rx="98" ry="14" class="pill-green"/>
+  <text x="465" y="290" text-anchor="middle" font-size="11">Large file limit</text>
+
+  <ellipse cx="465" cy="336" rx="98" ry="14" class="pill-blue"/>
+  <text x="465" y="340" text-anchor="middle" font-size="11">Encrypt (CryptoSoft)</text>
+
+  <ellipse cx="465" cy="368" rx="98" ry="14" class="pill-green"/>
+  <text x="465" y="372" text-anchor="middle" font-size="11">Single-instance guard</text>
+
+  <!-- extends bracket -->
+  <path d="M563 336 L570 336 L570 368 L563 368" fill="none" stroke="#aaa" stroke-width="0.7" stroke-dasharray="3 2"/>
+  <text x="573" y="354" font-size="10" fill="#777">extends</text>
+
+  <ellipse cx="465" cy="418" rx="98" ry="14" class="pill-blue"/>
+  <text x="465" y="422" text-anchor="middle" font-size="11">Write daily log</text>
+
+  <ellipse cx="465" cy="450" rx="98" ry="14" class="pill-blue"/>
+  <text x="465" y="454" text-anchor="middle" font-size="11">Update state file</text>
+
+  <ellipse cx="465" cy="500" rx="98" ry="14" class="pill-green"/>
+  <text x="465" y="504" text-anchor="middle" font-size="11">Docker log sync</text>
+
+  <!-- includes arrows from GUI to Engine -->
+  <line x1="307" y1="220" x2="350" y2="90" class="dashed" marker-end="url(#arr)"/>
+  <text x="325" y="148" class="lbl">includes</text>
+
+  <!-- calls arrows to external -->
+  <line x1="465" y1="350" x2="465" y2="700" class="dashed" marker-end="url(#arr)"/>
+  <line x1="563" y1="500" x2="720" y2="700" class="dashed" marker-end="url(#arr)"/>
+  <text x="430" y="690" class="lbl">calls</text>
+  <text x="635" y="690" class="lbl">calls</text>
+
+  <!-- External -->
+  <ellipse cx="465" cy="720" rx="90" ry="18" class="pill-purple"/>
+  <text x="465" y="715" text-anchor="middle" font-size="11">CryptoSoft.exe</text>
+  <text x="465" y="728" text-anchor="middle" font-size="10" fill="#777">(External Process)</text>
+
+  <ellipse cx="740" cy="720" rx="80" ry="18" class="pill-green"/>
+  <text x="740" y="715" text-anchor="middle" font-size="11">Docker Server</text>
+  <text x="740" y="728" text-anchor="middle" font-size="10" fill="#777">(External Process)</text>
+
+  <!-- Legend -->
+  <rect x="120" y="694" width="210" height="36" rx="4" fill="#fafaf8" stroke="#ccc" stroke-width="0.7"/>
+  <ellipse cx="160" cy="706" rx="28" ry="9" class="pill-blue"/>
+  <text x="160" y="709" text-anchor="middle" font-size="10">existing</text>
+  <ellipse cx="220" cy="706" rx="28" ry="9" class="pill-green"/>
+  <text x="220" y="709" text-anchor="middle" font-size="10">new v3.0</text>
+  <text x="135" y="722" font-size="10" fill="#555">— — includes/calls   ext. extends</text>
+</svg>
