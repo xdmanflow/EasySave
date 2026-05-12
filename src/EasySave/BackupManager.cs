@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks; // Added for parallel execution
 using EasySave.Languages;
 using EasySave.Models;
 using EasySave.Services;
@@ -26,35 +27,102 @@ namespace EasySave
             _settings = settings;
         }
 
-        public void RunJob(int index)
+        // Now returns a Task so the caller doesn't block.
+        public Task RunJobAsync(int index)
         {
             var job = _jobs[index];
 
             if (BusinessSoftwareDetector.IsRunning(_settings.BusinessSoftware))
                 throw new InvalidOperationException($"Job '{job.Name}' stopped: business software detected.");
 
-            IBackupStrategy strategy = job.Type == BackupType.Full
-                ? new FullBackupStrategy()
-                : new DifferentialBackupStrategy();
+            // Initialize job state before starting
+            job.State = JobState.Running;
+            job.Progress = 0;
+            job.TotalSizeCopied = 0;
+            job.PauseEvent.Set(); // Ensure it starts unpaused
 
-            strategy.Execute(job, _daily, _state, _settings);
+            // Dispatch to a background thread
+            return Task.Run(() =>
+            {
+                try
+                {
+                    IBackupStrategy strategy = job.Type == BackupType.Full
+                        ? new FullBackupStrategy()
+                        : new DifferentialBackupStrategy();
+
+                    // The strategy will handle the actual file copying, pausing, and limits
+                    strategy.Execute(job, _daily, _state, _settings);
+
+                    // If it wasn't manually stopped by the user, mark as completed
+                    if (job.State != JobState.Stopped)
+                    {
+                        job.State = JobState.Completed;
+                        job.Progress = 100.0;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    job.State = JobState.Error;
+                    // TODO: Log exception using _daily or _state
+                    Console.Error.WriteLine($"Error in job {job.Name}: {ex.Message}");
+                }
+            });
         }
 
         public void RunAllJobs()
         {
             if (_jobs.Count == 0) { Console.WriteLine(_lang.Get("run_all_none")); return; }
-            for (int i = 0; i < _jobs.Count; i++) RunJob(i);
+
+            // Launch all jobs in parallel
+            List<Task> tasks = new List<Task>();
+            for (int i = 0; i < _jobs.Count; i++)
+            {
+                tasks.Add(RunJobAsync(i));
+            }
+
+            // Optional: You can use Task.WaitAll(tasks.ToArray()) here if you want 
+            // the main thread to wait for all backups to finish before continuing.
         }
 
         public void RunFromArgument(string arg)
         {
+            List<Task> tasks = new List<Task>();
             foreach (int idx in ParseArgument(arg))
             {
                 if (idx < 1 || idx > _jobs.Count)
                     Console.Error.WriteLine($"Index {idx} out of range.");
                 else
-                    RunJob(idx - 1);
+                    tasks.Add(RunJobAsync(idx - 1));
             }
+        }
+
+        // --- NEW REAL-TIME INTERACTION METHODS ---
+
+        public void PauseJob(int index)
+        {
+            var job = _jobs[index];
+            if (job.State == JobState.Running)
+            {
+                job.State = JobState.Paused;
+                job.PauseEvent.Reset(); // This closes the gate, forcing the thread to wait
+            }
+        }
+
+        public void ResumeJob(int index)
+        {
+            var job = _jobs[index];
+            if (job.State == JobState.Paused)
+            {
+                job.State = JobState.Running;
+                job.PauseEvent.Set(); // This opens the gate, resuming the thread
+            }
+        }
+
+        public void StopJob(int index)
+        {
+            var job = _jobs[index];
+            job.State = JobState.Stopped;
+            job.PauseEvent.Set(); // If the job was paused, we must unpause it so it can process the Stop command and exit cleanly
         }
 
         private static IEnumerable<int> ParseArgument(string arg)
@@ -75,3 +143,4 @@ namespace EasySave
         }
     }
 }
+  

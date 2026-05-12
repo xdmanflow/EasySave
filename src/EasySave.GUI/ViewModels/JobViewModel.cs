@@ -10,6 +10,10 @@ namespace EasySave.GUI.ViewModels
         private string _targetDirectory = string.Empty;
         private BackupType _type = BackupType.Full;
 
+        // --- NEW FIELDS FOR REAL-TIME TRACKING ---
+        private double _progress = 0.0;
+        private JobState _state = JobState.Idle;
+
         public string Name
         {
             get => _name;
@@ -34,6 +38,19 @@ namespace EasySave.GUI.ViewModels
             set => Set(ref _type, value);
         }
 
+        // --- NEW PROPERTIES FOR XAML BINDING ---
+        public double Progress
+        {
+            get => _progress;
+            set => Set(ref _progress, value);
+        }
+
+        public JobState State
+        {
+            get => _state;
+            set => Set(ref _state, value);
+        }
+
         public Array BackupTypes { get; } = Enum.GetValues(typeof(BackupType));
 
         public BackupJob ToModel() => new BackupJob
@@ -41,7 +58,9 @@ namespace EasySave.GUI.ViewModels
             Name = Name,
             SourceDirectory = SourceDirectory,
             TargetDirectory = TargetDirectory,
-            Type = Type
+            Type = Type,
+            State = State,         // Map state
+            Progress = Progress    // Map progress
         };
 
         public static JobViewModel FromModel(BackupJob job) => new JobViewModel
@@ -49,7 +68,9 @@ namespace EasySave.GUI.ViewModels
             Name = job.Name,
             SourceDirectory = job.SourceDirectory,
             TargetDirectory = job.TargetDirectory,
-            Type = job.Type
+            Type = job.Type,
+            State = job.State,
+            Progress = job.Progress
         };
     }
 }

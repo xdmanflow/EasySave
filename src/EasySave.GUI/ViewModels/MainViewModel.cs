@@ -3,6 +3,8 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Windows.Input;
+using System.Windows.Threading; // ADDED FOR UI REFRESH TIMER
+using System.Collections.Generic;
 using EasySave.Config;
 using EasySave.Languages;
 using EasySave.Models;
@@ -18,9 +20,11 @@ namespace EasySave.GUI.ViewModels
         private StateLogger _state;
         private LanguageManager _lang;
         private BackupManager _manager = null!;
+        private List<BackupJob> _backendJobs = new(); // Keep track of backend models
 
         private JobViewModel? _selectedJob;
         private string _statusMessage = "Ready.";
+        private readonly DispatcherTimer _progressTimer; // Timer to refresh UI
 
         public ObservableCollection<JobViewModel> Jobs { get; } = new();
 
@@ -43,6 +47,11 @@ namespace EasySave.GUI.ViewModels
         public ICommand RunAllJobsCommand { get; }
         public ICommand OpenSettingsCommand { get; }
 
+        // --- NEW COMMANDS ---
+        public ICommand PauseJobCommand { get; }
+        public ICommand ResumeJobCommand { get; }
+        public ICommand StopJobCommand { get; }
+
         public event Action<JobViewModel?>? RequestEditJob;
         public event Action? RequestOpenSettings;
 
@@ -51,21 +60,43 @@ namespace EasySave.GUI.ViewModels
             _config = new ConfigManager();
             _settings = _config.LoadSettings();
 
-            string root = Path.Combine(
-                Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "EasySave");
+            string root = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "EasySave");
             _lang = new LanguageManager(_settings.Language);
             _daily = new DailyLogger(Path.Combine(root, "Logs"), _settings.LogFormat);
             _state = new StateLogger(Path.Combine(root, "State"), Enumerable.Empty<string>());
 
             AddJobCommand = new RelayCommand(_ => RequestEditJob?.Invoke(null));
-            EditJobCommand = new RelayCommand(_ => RequestEditJob?.Invoke(SelectedJob),
-                                                   _ => SelectedJob != null);
+            EditJobCommand = new RelayCommand(_ => RequestEditJob?.Invoke(SelectedJob), _ => SelectedJob != null);
             DeleteJobCommand = new RelayCommand(_ => DeleteJob(), _ => SelectedJob != null);
-            RunJobCommand = new RelayCommand(_ => RunSelected(), _ => SelectedJob != null);
-            RunAllJobsCommand = new RelayCommand(_ => RunAll(), _ => Jobs.Count > 0);
             OpenSettingsCommand = new RelayCommand(_ => RequestOpenSettings?.Invoke());
 
+            // --- UPDATED COMMANDS FOR PARALLEL EXECUTION ---
+            RunJobCommand = new RelayCommand(_ => RunSelected(), _ => SelectedJob != null && SelectedJob.State != JobState.Running);
+            RunAllJobsCommand = new RelayCommand(_ => RunAll(), _ => Jobs.Count > 0);
+
+            PauseJobCommand = new RelayCommand(_ => PauseSelected(), _ => SelectedJob != null && SelectedJob.State == JobState.Running);
+            ResumeJobCommand = new RelayCommand(_ => ResumeSelected(), _ => SelectedJob != null && SelectedJob.State == JobState.Paused);
+            StopJobCommand = new RelayCommand(_ => StopSelected(), _ => SelectedJob != null && (SelectedJob.State == JobState.Running || SelectedJob.State == JobState.Paused));
+
+            // --- SETUP UI TIMER ---
+            _progressTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(200) }; // Refresh every 200ms
+            _progressTimer.Tick += SyncProgress;
+            _progressTimer.Start();
+
             LoadJobs();
+        }
+
+        private void SyncProgress(object? sender, EventArgs e)
+        {
+            // Sync the progress from the background threads to the UI
+            for (int i = 0; i < Jobs.Count; i++)
+            {
+                if (i < _backendJobs.Count)
+                {
+                    Jobs[i].Progress = _backendJobs[i].Progress;
+                    Jobs[i].State = _backendJobs[i].State;
+                }
+            }
         }
 
         private void LoadJobs()
@@ -78,20 +109,15 @@ namespace EasySave.GUI.ViewModels
 
         private void RefreshManager()
         {
-            var list = Jobs.Select(j => j.ToModel()).ToList();
-            string stateDir = Path.Combine(
-                Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
-                "EasySave", "State");
-            _state = new StateLogger(stateDir, list.Select(j => j.Name));
-            _manager = new BackupManager(list, _daily, _state, _lang, _settings);
+            _backendJobs = Jobs.Select(j => j.ToModel()).ToList();
+            string stateDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "EasySave", "State");
+            _state = new StateLogger(stateDir, _backendJobs.Select(j => j.Name));
+            _manager = new BackupManager(_backendJobs, _daily, _state, _lang, _settings);
         }
 
         public void SaveJob(JobViewModel vm, bool isNew, string? originalName)
         {
-            if (isNew)
-            {
-                Jobs.Add(vm);
-            }
+            if (isNew) Jobs.Add(vm);
             else
             {
                 var existing = Jobs.FirstOrDefault(j => j.Name == originalName);
@@ -117,21 +143,39 @@ namespace EasySave.GUI.ViewModels
         private void RunSelected()
         {
             if (SelectedJob == null) return;
-            RefreshManager();
             int idx = Jobs.IndexOf(SelectedJob);
             try
             {
-                _manager.RunJob(idx);
-                StatusMessage = $"Job '{SelectedJob.Name}' completed.";
+                _manager.RunJobAsync(idx); // Starts task in background, doesn't freeze UI
+                StatusMessage = $"Job '{SelectedJob.Name}' started.";
             }
             catch (Exception ex) { StatusMessage = $"Error: {ex.Message}"; }
         }
 
         private void RunAll()
         {
-            RefreshManager();
-            try { _manager.RunAllJobs(); StatusMessage = "All jobs completed."; }
+            try
+            {
+                _manager.RunAllJobs(); // Now launches parallel tasks
+                StatusMessage = "All jobs started.";
+            }
             catch (Exception ex) { StatusMessage = $"Error: {ex.Message}"; }
+        }
+
+        // --- NEW CONTROL METHODS ---
+        private void PauseSelected()
+        {
+            if (SelectedJob != null) _manager.PauseJob(Jobs.IndexOf(SelectedJob));
+        }
+
+        private void ResumeSelected()
+        {
+            if (SelectedJob != null) _manager.ResumeJob(Jobs.IndexOf(SelectedJob));
+        }
+
+        private void StopSelected()
+        {
+            if (SelectedJob != null) _manager.StopJob(Jobs.IndexOf(SelectedJob));
         }
 
         private void PersistJobs()

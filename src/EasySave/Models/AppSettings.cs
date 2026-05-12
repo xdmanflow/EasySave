@@ -4,7 +4,6 @@ using EasyLog;
 
 namespace EasySave.Models
 {
-    
     public class AppSettings
     {
         [JsonPropertyName("LogFormat")]
@@ -21,5 +20,12 @@ namespace EasySave.Models
 
         [JsonPropertyName("EncryptedExtensions")]
         public List<string> EncryptedExtensions { get; set; } = new();
+
+        // --- NEW PROPERTIES FOR STEP 4 ---
+        [JsonPropertyName("PriorityExtensions")]
+        public List<string> PriorityExtensions { get; set; } = new();
+
+        [JsonPropertyName("MaxFileSizeKB")]
+        public long MaxFileSizeKB { get; set; } = 0; // 0 means no limit is applied
     }
 }

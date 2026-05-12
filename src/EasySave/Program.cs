@@ -108,7 +108,7 @@ namespace EasySave
                         if (jobs.Count == 0) { Console.WriteLine(lang.Get("no_jobs")); Pause(lang); break; }
                         Console.Write(lang.Get("run_index", jobs.Count));
                         if (int.TryParse(Console.ReadLine(), out int ri) && ri >= 1 && ri <= jobs.Count)
-                            manager.RunJob(ri - 1);
+                            manager.RunJobAsync(ri - 1);
                         else Console.WriteLine(lang.Get("invalid_choice"));
                         Pause(lang); break;
 

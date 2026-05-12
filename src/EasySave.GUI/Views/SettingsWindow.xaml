@@ -1,19 +1,17 @@
 <Window x:Class="EasySave.GUI.Views.SettingsWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Settings" Height="580" Width="520"
+        Title="Settings" Height="780" Width="520"
         WindowStartupLocation="CenterOwner"
         ResizeMode="NoResize">
     <StackPanel Margin="20">
 
-        <!-- Log Format -->
         <TextBlock Text="Log Format" FontWeight="Bold" Margin="0,0,0,6"/>
         <StackPanel Orientation="Horizontal" Margin="0,0,0,16">
             <RadioButton Content="JSON" IsChecked="{Binding IsJson}" Margin="0,0,20,0"/>
             <RadioButton Content="XML"  IsChecked="{Binding IsXml}"/>
         </StackPanel>
 
-        <!-- Language -->
         <TextBlock Text="Language" FontWeight="Bold" Margin="0,0,0,6"/>
         <ComboBox SelectedValue="{Binding Language}"
                   SelectedValuePath="Tag" Margin="0,0,0,16">
@@ -22,7 +20,6 @@
             <ComboBoxItem Content="Spanish" Tag="es"/>
         </ComboBox>
 
-        <!-- CryptoSoft -->
         <TextBlock Text="CryptoSoft Path" FontWeight="Bold" Margin="0,0,0,6"/>
         <DockPanel Margin="0,0,0,16">
             <Button DockPanel.Dock="Right" Content="..." Width="34"
@@ -30,12 +27,11 @@
             <TextBox Text="{Binding CryptoSoftPath, UpdateSourceTrigger=PropertyChanged}"/>
         </DockPanel>
 
-        <!-- Business Software -->
         <TextBlock Text="Business Software  (backup stops when detected)"
                    FontWeight="Bold" Margin="0,0,0,6"/>
         <DockPanel Margin="0,0,0,4">
             <Button DockPanel.Dock="Right" Content="Add"
-                    Command="{Binding AddBusinessCommand}" Width="50" Margin="6,0,0,0"/>
+                     Command="{Binding AddBusinessCommand}" Width="50" Margin="6,0,0,0"/>
             <TextBox Text="{Binding NewBusiness, UpdateSourceTrigger=PropertyChanged}"
                      ToolTip="e.g. calc.exe"/>
         </DockPanel>
@@ -44,15 +40,14 @@
                     Command="{Binding RemoveBusinessCommand}"
                     Width="60" Margin="6,0,0,0" VerticalAlignment="Top"/>
             <ListBox ItemsSource="{Binding BusinessSoftwareList}"
-                     SelectedItem="{Binding SelectedBusiness}" Height="80"/>
+                      SelectedItem="{Binding SelectedBusiness}" Height="80"/>
         </DockPanel>
 
-        <!-- Encrypted Extensions -->
         <TextBlock Text="Extensions to encrypt  (.txt, .docx, ...)"
                    FontWeight="Bold" Margin="0,0,0,6"/>
         <DockPanel Margin="0,0,0,4">
             <Button DockPanel.Dock="Right" Content="Add"
-                    Command="{Binding AddExtensionCommand}" Width="50" Margin="6,0,0,0"/>
+                     Command="{Binding AddExtensionCommand}" Width="50" Margin="6,0,0,0"/>
             <TextBox Text="{Binding NewExtension, UpdateSourceTrigger=PropertyChanged}"
                      ToolTip="e.g. .txt"/>
         </DockPanel>
@@ -61,10 +56,28 @@
                     Command="{Binding RemoveExtensionCommand}"
                     Width="60" Margin="6,0,0,0" VerticalAlignment="Top"/>
             <ListBox ItemsSource="{Binding EncryptedExtensions}"
-                     SelectedItem="{Binding SelectedExtension}" Height="80"/>
+                      SelectedItem="{Binding SelectedExtension}" Height="80"/>
         </DockPanel>
 
-        <!-- Actions -->
+        <TextBlock Text="Priority Extensions (Backup first: .txt, .docx, ...)"
+                   FontWeight="Bold" Margin="0,0,0,6"/>
+        <DockPanel Margin="0,0,0,4">
+            <Button DockPanel.Dock="Right" Content="Add"
+                    Command="{Binding AddPriorityExtensionCommand}" Width="50" Margin="6,0,0,0"/>
+            <TextBox Text="{Binding NewPriorityExtension, UpdateSourceTrigger=PropertyChanged}"
+                     ToolTip="e.g. .txt"/>
+        </DockPanel>
+        <DockPanel Margin="0,0,0,20">
+            <Button DockPanel.Dock="Right" Content="Remove"
+                    Command="{Binding RemovePriorityExtensionCommand}"
+                    Width="60" Margin="6,0,0,0" VerticalAlignment="Top"/>
+            <ListBox ItemsSource="{Binding PriorityExtensions}"
+                     SelectedItem="{Binding SelectedPriorityExtension}" Height="80"/>
+        </DockPanel>
+
+        <TextBlock Text="Max Parallel File Size (KB) - 0 means unlimited" FontWeight="Bold" Margin="0,0,0,6"/>
+        <TextBox Text="{Binding MaxFileSizeKB, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,20"/>
+
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
             <Button Content="Save"   Click="Save_Click"   Width="80" Margin="0,0,10,0"/>
             <Button Content="Cancel" Click="Cancel_Click" Width="80"/>

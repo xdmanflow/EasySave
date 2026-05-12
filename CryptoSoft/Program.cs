@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using System.Threading; // Added for Mutex
 
 namespace CryptoSoft
 {
@@ -8,24 +9,49 @@ namespace CryptoSoft
     {
         private static readonly byte[] Key = { 0x4A, 0x6F, 0x79, 0x21 };
 
+        // --- NEW: A unique global identifier for the Mutex ---
+        private const string MutexName = "Global\\CryptoSoft_SingleInstance_Mutex";
+
         static int Main(string[] args)
         {
-            if (args.Length < 1)
-            {
-                Console.Error.WriteLine("Usage: CryptoSoft.exe <file_path>");
-                return -1;
-            }
-
-            string filePath = args[0];
-
-            if (!File.Exists(filePath))
-            {
-                Console.Error.WriteLine($"File not found: {filePath}");
-                return -2;
-            }
+            // --- NEW: Initialize the system-wide Mutex ---
+            using Mutex mutex = new Mutex(false, MutexName);
+            bool acquiredMutex = false;
 
             try
             {
+                // Try to acquire the mutex instantly without waiting (TimeSpan.Zero).
+                try
+                {
+                    acquiredMutex = mutex.WaitOne(TimeSpan.Zero, true);
+                }
+                catch (AbandonedMutexException)
+                {
+                    // If a previous instance crashed and abandoned the mutex, we can safely claim it.
+                    acquiredMutex = true;
+                }
+
+                if (!acquiredMutex)
+                {
+                    Console.Error.WriteLine("Error: CryptoSoft is already running. Only one instance is allowed at a time.");
+                    return -4; // Return specific error code so EasySave knows it was rejected
+                }
+
+                // --- ORIGINAL LOGIC ---
+                if (args.Length < 1)
+                {
+                    Console.Error.WriteLine("Usage: CryptoSoft.exe <file_path>");
+                    return -1;
+                }
+
+                string filePath = args[0];
+
+                if (!File.Exists(filePath))
+                {
+                    Console.Error.WriteLine($"File not found: {filePath}");
+                    return -2;
+                }
+
                 var sw = Stopwatch.StartNew();
 
                 byte[] data = File.ReadAllBytes(filePath);
@@ -44,6 +70,14 @@ namespace CryptoSoft
             {
                 Console.Error.WriteLine($"Error: {ex.Message}");
                 return -3;
+            }
+            finally
+            {
+                // --- NEW: Always release the mutex when done ---
+                if (acquiredMutex)
+                {
+                    mutex.ReleaseMutex();
+                }
             }
         }
     }
