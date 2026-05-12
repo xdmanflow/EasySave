@@ -59,8 +59,8 @@ namespace EasySave.GUI.ViewModels
             SourceDirectory = SourceDirectory,
             TargetDirectory = TargetDirectory,
             Type = Type,
-            State = State,         // Map state
-            Progress = Progress    // Map progress
+            State = State,
+            Progress = Progress
         };
 
         public static JobViewModel FromModel(BackupJob job) => new JobViewModel

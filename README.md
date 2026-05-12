@@ -42,8 +42,8 @@ Built with scalability and maintainability in mind, EasySave evolves across thre
 |---------|-----------|-------|--------|
 | **v1.0** | Console (MVC) | Core CLI engine, up to 5 backup jobs, JSON logs, EasyLog DLL | Released |
 | **v1.1** | Console (MVC) | XML log format support, backward compatible with v1.0 | Released |
-| **v2.0** | GUI (WPF/MVVM) | Unlimited jobs, CryptoSoft encryption, business software detection | Released |
-| **v3.0** | GUI (WPF/MVVM) | Parallel execution, per-job controls, priority files, Docker log centralization | Released |
+| **v2.0** | GUI (WPF/MVVM) | Unlimited jobs, CryptoSoft encryption, business software detection | In Dev |
+| **v3.0** | GUI (WPF/MVVM) | Real-time job controls (Play / Pause / Stop), presentation build | Planned |
 
 ---
 
@@ -57,50 +57,33 @@ Built with scalability and maintainability in mind, EasySave evolves across thre
 - **Multi-source Support** — local disks, external drives, and network drives
 - **Daily Log File** via `EasyLog.dll` — records timestamp, file paths (UNC format), file size, and transfer time in milliseconds
 - **Real-time State File** (`state.json`) — tracks progress, remaining files, and current action per job
-- **Multi-language Support** — English, French, and Spanish
+- **Multi-language Support** — English and French at a minimum (Spanish has been added)
 - **JSON format** for all log, state, and configuration files with line breaks for readability
 
 ### Version 1.1 — The Compatibility Update
 
 - All features from v1.0
-- **Selectable log format** — users can choose between **JSON** or **XML** for daily logs
+- **Selectable log format**: users can choose between **JSON** or **XML** for daily logs
 - Fully backward compatible with v1.0
 
 ### Version 2.0 — The Enterprise Update
 
-- **Graphical User Interface** using WPF, built on **MVVM architecture** with a dark ProSoft theme, job dashboard, status display, and settings window
+- **Graphical User Interface** using WPF or an equivalent framework, built on **MVVM architecture**
 - **Unlimited backup jobs** — no more 5-job restriction
 - **CryptoSoft Integration**:
-  - High-security file encryption for user-defined extensions, configurable in Settings
-  - Encryption duration recorded in logs: `0` = no encryption, `>0` = ms elapsed, `<0` = error
+  - High-security file encryption for user-defined extensions
+  - Encryption duration recorded in logs (ms); negative value indicates error
 - **Business Software Detection**:
-  - Configurable list of process names (e.g., accounting tools, ERP systems, calculator for demo)
-  - Prevents new jobs from launching when a monitored process is detected
-  - In sequential mode, completes the current file transfer before stopping
+  - Automatically detects active business software (e.g., accounting tools, ERP systems)
+  - Prevents new jobs from launching; completes the current file transfer before stopping sequential jobs
   - Shutdown events are recorded in the log file
-- **Enhanced Daily Log** — new `EncryptionTime` field per file transfer
-- **Log format choice** (JSON or XML) carried over from v1.1
-- **CLI mode preserved** — `EasySave.exe 1-3` and `EasySave.exe 1;3` remain fully functional
+- **Enhanced Daily Log** — includes encryption time per file
+- Log format choice (JSON or XML) carried over from v1.1
 
 ### Version 3.0 — The Real-Time Update
 
-- **Parallel backup execution** — all active jobs run concurrently, each on its own thread, replacing the sequential model from v1.x and v2.0
-- **Per-job controls** — each job exposes individual **Play**, **Pause**, and **Stop** buttons directly in the GUI:
-  - *Pause* — takes effect after the current file finishes transferring
-  - *Stop* — immediately cancels the job and its active task
-  - *Play* — starts a job or resumes it from a paused state
-- **Real-time progress monitoring** — per-job progress visible at all times (at minimum as a percentage)
-- **Priority file management** — user-defined priority extensions (configured in Settings) are always transferred first; no non-priority file transfer can start on any job while priority files remain pending on at least one job
-- **Large-file bandwidth guard** — configurable size threshold (n KB): no two files exceeding that threshold may transfer simultaneously across all running jobs; smaller files are unaffected and continue freely, subject to the priority rule
-- **Automatic pause on business software detection** — when a monitored process is detected, all active jobs pause immediately; jobs resume automatically once the process exits; event is recorded in the log
-- **CryptoSoft single-instance enforcement** — CryptoSoft is guaranteed to run as a single instance; EasySave coordinates encryption requests across parallel jobs to prevent concurrent launches, with contention managed internally
-- **Centralized log server via Docker** — optional Docker-based log aggregation service with three selectable modes in Settings:
-  - Local only — log files remain on the user's machine
-  - Docker only — logs are sent exclusively to the centralized server
-  - Both — logs are written locally and forwarded to the Docker server simultaneously
-  - A single consolidated daily log file is maintained on the server regardless of the number of reporting machines, with per-machine identifiers for user differentiation
-- **GUI language switching** — language can be changed at runtime from the Settings window without restarting the application (EN / FR / ES)
-- **All v2.0 features preserved** — WPF/MVVM dark ProSoft theme, unlimited jobs, CryptoSoft encryption, business software blocklist, enhanced daily log, JSON/XML format selector, CLI mode, real-time `state.json`
+- **Per-job controls** — Play, Pause, and Stop for each backup task independently
+- Full presentation build and final project delivery
 
 ---
 
@@ -134,7 +117,7 @@ Built with scalability and maintainability in mind, EasySave evolves across thre
 
 4. Run the application:
    ```bash
-   # v1.x — Console
+   # v1.0 — Console
    ./EasySave.exe
 
    # Or with arguments
@@ -146,10 +129,10 @@ Built with scalability and maintainability in mind, EasySave evolves across thre
 
 ## Usage
 
-### Running Backup Jobs (v1.x / v2.0 / v3.0 CLI)
+### Running Backup Jobs (v1.0 / v1.1)
 
 ```bash
-# Run all configured jobs sequentially (v1.x / v2.0) or in parallel (v3.0)
+# Run all configured jobs sequentially
 EasySave.exe
 
 # Run a range of jobs (e.g., jobs 1 to 3)
@@ -201,34 +184,33 @@ Each backup job requires:
 
 ## Logging — EasyLog.dll
 
-The logging system is a standalone **Dynamic Link Library** (`EasyLog.dll`), designed for reuse across all ProSoft projects. All updates to the library remain backward compatible with v1.0.
+The logging system is a standalone **Dynamic Link Library** (`EasyLog.dll`), designed for reuse across all ProSoft projects. All future updates to the library must remain backward compatible with v1.0.
 
 ### Daily Log File
 
 Records every file transfer action in real time.
 
-| Field | Version | Description |
-|-------|---------|-------------|
-| Timestamp | v1.0+ | Date and time of the action |
-| Backup Name | v1.0+ | Name of the job |
-| Source Path | v1.0+ | Full UNC path of the source file |
-| Destination Path | v1.0+ | Full UNC path of the destination file |
-| File Size | v1.0+ | Size in bytes |
-| Transfer Time | v1.0+ | Duration in milliseconds (negative = error) |
-| Encryption Time | v2.0+ | Duration in ms — `0` = no encryption, `<0` = error |
-| Machine ID | v3.0+ | Per-machine identifier for Docker log differentiation |
+| Field | Description |
+|-------|-------------|
+| Timestamp | Date and time of the action |
+| Backup Name | Name of the job |
+| Source Path | Full UNC path of the source file |
+| Destination Path | Full UNC path of the destination file |
+| File Size | Size in bytes |
+| Transfer Time | Duration in milliseconds (negative = error) |
+| Encryption Time | *(v2.0+)* Duration in ms — `0` = no encryption, `<0` = error |
 
 Log format: JSON or XML (user-selectable from v1.1 onward).
 
 ### Real-Time State File (`state.json`)
 
-Tracks the live progress of all backup jobs. Thread-safe from v3.0 onward to support concurrent parallel job writes.
+Tracks the live progress of all backup jobs.
 
 | Field | Description |
 |-------|-------------|
 | Job Name | Name of the backup job |
 | Last Action Timestamp | Time of the most recent action |
-| Status | `Active`, `Inactive`, `Paused` *(v3.0)* |
+| Status | `Active` or `Inactive` |
 | Total Files | Total number of files eligible for backup |
 | Total Size | Total size of files to transfer |
 | Progress | Percentage of completion |
@@ -246,8 +228,8 @@ Tracks the live progress of all backup jobs. Thread-safe from v3.0 onward to sup
 ```
 EasySave/
 ├── src/
-│   ├── EasySave/               # Core application (v1.x CLI / v2.x–v3.x GUI)
-│   └── EasyLog/                # Shared logging DLL (JSON & XML, Docker transport)
+│   ├── EasySave/               # Core application (v1.x CLI / v2.x GUI)
+│   └── EasyLog/                # Shared logging DLL (JSON & XML)
 ├── docs/
 │   └── diagrams/               # UML diagrams per deliverable
 ├── tests/

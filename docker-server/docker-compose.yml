@@ -1,0 +1,8 @@
+version: '3'
+services:
+  log-server:
+    build: .
+    ports:
+      - "5050:5050"
+    volumes:
+      - ./logs:/logs

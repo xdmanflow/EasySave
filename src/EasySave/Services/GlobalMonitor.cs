@@ -46,8 +46,7 @@ namespace EasySave.Services
 
         public static void WaitIfNonPriority(bool isPriorityFile)
         {
-            if (isPriorityFile) return; // Priority files pass freely
-
+            if (isPriorityFile) return;
             lock (_priorityLock)
             {
                 // Non-priority files must wait here as long as the global count is > 0
@@ -64,9 +63,7 @@ namespace EasySave.Services
 
             long maxFileSizeBytes = maxFileSizeKB * 1024;
             if (fileSize > maxFileSizeBytes)
-            {
-                _largeFileSemaphore.Wait(); // Locks if another large file is already transferring
-            }
+                _largeFileSemaphore.Wait();
         }
 
         public static void ReleaseIfLargeFile(long fileSize, long maxFileSizeKB)
@@ -75,9 +72,7 @@ namespace EasySave.Services
 
             long maxFileSizeBytes = maxFileSizeKB * 1024;
             if (fileSize > maxFileSizeBytes)
-            {
-                _largeFileSemaphore.Release(); // Unlocks for the next large file
-            }
+                _largeFileSemaphore.Release();
         }
     }
 }

@@ -12,6 +12,7 @@ namespace EasySave.GUI.ViewModels
         private string _language = "en";
         private string _newBusiness = string.Empty;
         private string _newExtension = string.Empty;
+        private string _newPriorityExtension = string.Empty;
         private string? _selectedBusiness;
         private string? _selectedExtension;
 
@@ -19,6 +20,9 @@ namespace EasySave.GUI.ViewModels
         private long _maxFileSizeKB = 0;
         private string _newPriorityExtension = string.Empty;
         private string? _selectedPriorityExtension;
+        private DockerLogMode _dockerLogMode;
+        private string _dockerLogUrl = string.Empty;
+        private long _maxFileSizeKB = 0;
 
         public bool IsJson
         {
@@ -30,6 +34,30 @@ namespace EasySave.GUI.ViewModels
         {
             get => _logFormat == LogFormat.Xml;
             set { if (value) { _logFormat = LogFormat.Xml; OnPropertyChanged(); OnPropertyChanged(nameof(IsJson)); } }
+        }
+
+        public bool IsLocal
+        {
+            get => _dockerLogMode == DockerLogMode.Local;
+            set { if (value) { _dockerLogMode = DockerLogMode.Local; OnPropertyChanged(); OnPropertyChanged(nameof(IsRemote)); OnPropertyChanged(nameof(IsBoth)); } }
+        }
+
+        public bool IsRemote
+        {
+            get => _dockerLogMode == DockerLogMode.Remote;
+            set { if (value) { _dockerLogMode = DockerLogMode.Remote; OnPropertyChanged(); OnPropertyChanged(nameof(IsLocal)); OnPropertyChanged(nameof(IsBoth)); } }
+        }
+
+        public bool IsBoth
+        {
+            get => _dockerLogMode == DockerLogMode.Both;
+            set { if (value) { _dockerLogMode = DockerLogMode.Both; OnPropertyChanged(); OnPropertyChanged(nameof(IsLocal)); OnPropertyChanged(nameof(IsRemote)); } }
+        }
+
+        public string DockerLogUrl
+        {
+            get => _dockerLogUrl;
+            set => Set(ref _dockerLogUrl, value);
         }
 
         public string CryptoSoftPath
@@ -54,6 +82,12 @@ namespace EasySave.GUI.ViewModels
         {
             get => _newExtension;
             set => Set(ref _newExtension, value);
+        }
+
+        public string NewPriorityExtension
+        {
+            get => _newPriorityExtension;
+            set => Set(ref _newPriorityExtension, value);
         }
 
         public string? SelectedBusiness
@@ -87,6 +121,12 @@ namespace EasySave.GUI.ViewModels
             set => Set(ref _selectedPriorityExtension, value);
         }
 
+        public long MaxFileSizeKB
+        {
+            get => _maxFileSizeKB;
+            set => Set(ref _maxFileSizeKB, value);
+        }
+
         public ObservableCollection<string> BusinessSoftwareList { get; } = new();
         public ObservableCollection<string> EncryptedExtensions { get; } = new();
 
@@ -107,11 +147,13 @@ namespace EasySave.GUI.ViewModels
             _logFormat = s.LogFormat;
             _cryptoSoftPath = s.CryptoSoftPath;
             _language = s.Language;
-            _maxFileSizeKB = s.MaxFileSizeKB; // Load Max File Size
+            _dockerLogMode = s.DockerLogMode;
+            _dockerLogUrl = s.DockerLogUrl;
+            _maxFileSizeKB = s.MaxFileSizeKB;
 
             foreach (var b in s.BusinessSoftware) BusinessSoftwareList.Add(b);
             foreach (var e in s.EncryptedExtensions) EncryptedExtensions.Add(e);
-            foreach (var p in s.PriorityExtensions) PriorityExtensions.Add(p); // Load Priority Extensions
+            foreach (var p in s.PriorityExtensions) PriorityExtensions.Add(p);
 
             AddBusinessCommand = new RelayCommand(_ =>
             {
@@ -163,7 +205,10 @@ namespace EasySave.GUI.ViewModels
             MaxFileSizeKB = MaxFileSizeKB, // Save value
             BusinessSoftware = new System.Collections.Generic.List<string>(BusinessSoftwareList),
             EncryptedExtensions = new System.Collections.Generic.List<string>(EncryptedExtensions),
-            PriorityExtensions = new System.Collections.Generic.List<string>(PriorityExtensions) // Save value
+            DockerLogMode = _dockerLogMode,
+            DockerLogUrl = DockerLogUrl,
+            PriorityExtensions = new System.Collections.Generic.List<string>(PriorityExtensions),
+            MaxFileSizeKB = MaxFileSizeKB
         };
     }
 }

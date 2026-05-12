@@ -26,6 +26,12 @@ namespace EasySave.Models
         public List<string> PriorityExtensions { get; set; } = new();
 
         [JsonPropertyName("MaxFileSizeKB")]
-        public long MaxFileSizeKB { get; set; } = 0; // 0 means no limit is applied
+        public long MaxFileSizeKB { get; set; } = 0;
+
+        [JsonPropertyName("DockerLogMode")]
+        public DockerLogMode DockerLogMode { get; set; } = DockerLogMode.Local;
+
+        [JsonPropertyName("DockerLogUrl")]
+        public string DockerLogUrl { get; set; } = "http://localhost:5050/log";
     }
 }

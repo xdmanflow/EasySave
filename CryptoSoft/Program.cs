@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
-using System.Threading; // Added for Mutex
+using System.Threading;
 
 namespace CryptoSoft
 {
@@ -34,7 +34,7 @@ namespace CryptoSoft
                 if (!acquiredMutex)
                 {
                     Console.Error.WriteLine("Error: CryptoSoft is already running. Only one instance is allowed at a time.");
-                    return -4; // Return specific error code so EasySave knows it was rejected
+                    return -4;
                 }
 
                 // --- ORIGINAL LOGIC ---
@@ -77,8 +77,8 @@ namespace CryptoSoft
                 if (acquiredMutex)
                 {
                     mutex.ReleaseMutex();
-                }
             }
         }
     }
+}
 }

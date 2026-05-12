@@ -1,10 +1,10 @@
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Windows.Input;
-using System.Windows.Threading; // ADDED FOR UI REFRESH TIMER
-using System.Collections.Generic;
+using System.Windows.Threading;
 using EasySave.Config;
 using EasySave.Languages;
 using EasySave.Models;
@@ -20,11 +20,11 @@ namespace EasySave.GUI.ViewModels
         private StateLogger _state;
         private LanguageManager _lang;
         private BackupManager _manager = null!;
-        private List<BackupJob> _backendJobs = new(); // Keep track of backend models
+        private List<BackupJob> _backendJobs = new();
 
         private JobViewModel? _selectedJob;
         private string _statusMessage = "Ready.";
-        private readonly DispatcherTimer _progressTimer; // Timer to refresh UI
+        private readonly DispatcherTimer _progressTimer;
 
         public ObservableCollection<JobViewModel> Jobs { get; } = new();
 
@@ -60,9 +60,14 @@ namespace EasySave.GUI.ViewModels
             _config = new ConfigManager();
             _settings = _config.LoadSettings();
 
-            string root = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "EasySave");
+            string root = Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "EasySave");
             _lang = new LanguageManager(_settings.Language);
-            _daily = new DailyLogger(Path.Combine(root, "Logs"), _settings.LogFormat);
+            _daily = new DailyLogger(
+                Path.Combine(root, "Logs"),
+                _settings.LogFormat,
+                _settings.DockerLogMode,
+                _settings.DockerLogUrl);
             _state = new StateLogger(Path.Combine(root, "State"), Enumerable.Empty<string>());
 
             AddJobCommand = new RelayCommand(_ => RequestEditJob?.Invoke(null));
@@ -78,8 +83,7 @@ namespace EasySave.GUI.ViewModels
             ResumeJobCommand = new RelayCommand(_ => ResumeSelected(), _ => SelectedJob != null && SelectedJob.State == JobState.Paused);
             StopJobCommand = new RelayCommand(_ => StopSelected(), _ => SelectedJob != null && (SelectedJob.State == JobState.Running || SelectedJob.State == JobState.Paused));
 
-            // --- SETUP UI TIMER ---
-            _progressTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(200) }; // Refresh every 200ms
+            _progressTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(200) };
             _progressTimer.Tick += SyncProgress;
             _progressTimer.Start();
 
@@ -110,7 +114,9 @@ namespace EasySave.GUI.ViewModels
         private void RefreshManager()
         {
             _backendJobs = Jobs.Select(j => j.ToModel()).ToList();
-            string stateDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "EasySave", "State");
+            string stateDir = Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+                "EasySave", "State");
             _state = new StateLogger(stateDir, _backendJobs.Select(j => j.Name));
             _manager = new BackupManager(_backendJobs, _daily, _state, _lang, _settings);
         }
@@ -146,7 +152,7 @@ namespace EasySave.GUI.ViewModels
             int idx = Jobs.IndexOf(SelectedJob);
             try
             {
-                _manager.RunJobAsync(idx); // Starts task in background, doesn't freeze UI
+                _manager.RunJobAsync(idx);
                 StatusMessage = $"Job '{SelectedJob.Name}' started.";
             }
             catch (Exception ex) { StatusMessage = $"Error: {ex.Message}"; }
@@ -156,7 +162,7 @@ namespace EasySave.GUI.ViewModels
         {
             try
             {
-                _manager.RunAllJobs(); // Now launches parallel tasks
+                _manager.RunAllJobs();
                 StatusMessage = "All jobs started.";
             }
             catch (Exception ex) { StatusMessage = $"Error: {ex.Message}"; }
@@ -189,6 +195,7 @@ namespace EasySave.GUI.ViewModels
             _settings = s;
             _config.SaveSettings(s);
             _daily.SetFormat(s.LogFormat);
+            _daily.SetDockerConfig(s.DockerLogMode, s.DockerLogUrl);
             _lang = new LanguageManager(s.Language);
             RefreshManager();
             StatusMessage = "Settings saved.";

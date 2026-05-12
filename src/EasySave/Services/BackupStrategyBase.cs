@@ -2,7 +2,7 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Threading; 
+using System.Threading;
 using EasySave.Models;
 using EasyLog;
 
@@ -74,7 +74,7 @@ namespace EasySave.Services
                             });
                         }
 
-                        Thread.Sleep(2000); // Sleep for 2 seconds then check again
+                        Thread.Sleep(2000);
 
                         // If user clicks Stop while we are waiting, break out of the loop
                         if (job.State == JobState.Stopped) break;
@@ -172,8 +172,8 @@ namespace EasySave.Services
                 if (remainingPriorityFiles > 0)
                 {
                     GlobalMonitor.RemovePriorityFiles(remainingPriorityFiles);
-                }
             }
+        }
         }
 
         private static void LogStop(DailyLogger logger, string jobName)
