@@ -232,10 +232,11 @@ EasySave/
 │   └── EasyLog/                # Shared logging DLL (JSON & XML)
 ├── docs/
 │   └── diagrams/               # UML diagrams per deliverable
+│   └── documentation/          # Documentation per deliverable
 ├── tests/
 │   └── unit-tests/             # Unit and integration tests
-├── docker/
-│   └── log-server/             # Docker log centralization service (v3.0)
+├── docker-server/
+│   └── logs/                   # Docker log centralization service (v3.0)
 ├── .gitignore
 ├── EasySave.sln
 └── README.md
