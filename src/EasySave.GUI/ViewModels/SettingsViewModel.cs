@@ -12,8 +12,13 @@ namespace EasySave.GUI.ViewModels
         private string _language = "en";
         private string _newBusiness = string.Empty;
         private string _newExtension = string.Empty;
+        private string _newPriorityExtension = string.Empty;
         private string? _selectedBusiness;
         private string? _selectedExtension;
+        private string? _selectedPriorityExtension;
+        private DockerLogMode _dockerLogMode;
+        private string _dockerLogUrl = string.Empty;
+        private long _maxFileSizeKB = 0;
 
         public bool IsJson
         {
@@ -25,6 +30,30 @@ namespace EasySave.GUI.ViewModels
         {
             get => _logFormat == LogFormat.Xml;
             set { if (value) { _logFormat = LogFormat.Xml; OnPropertyChanged(); OnPropertyChanged(nameof(IsJson)); } }
+        }
+
+        public bool IsLocal
+        {
+            get => _dockerLogMode == DockerLogMode.Local;
+            set { if (value) { _dockerLogMode = DockerLogMode.Local; OnPropertyChanged(); OnPropertyChanged(nameof(IsRemote)); OnPropertyChanged(nameof(IsBoth)); } }
+        }
+
+        public bool IsRemote
+        {
+            get => _dockerLogMode == DockerLogMode.Remote;
+            set { if (value) { _dockerLogMode = DockerLogMode.Remote; OnPropertyChanged(); OnPropertyChanged(nameof(IsLocal)); OnPropertyChanged(nameof(IsBoth)); } }
+        }
+
+        public bool IsBoth
+        {
+            get => _dockerLogMode == DockerLogMode.Both;
+            set { if (value) { _dockerLogMode = DockerLogMode.Both; OnPropertyChanged(); OnPropertyChanged(nameof(IsLocal)); OnPropertyChanged(nameof(IsRemote)); } }
+        }
+
+        public string DockerLogUrl
+        {
+            get => _dockerLogUrl;
+            set => Set(ref _dockerLogUrl, value);
         }
 
         public string CryptoSoftPath
@@ -51,6 +80,12 @@ namespace EasySave.GUI.ViewModels
             set => Set(ref _newExtension, value);
         }
 
+        public string NewPriorityExtension
+        {
+            get => _newPriorityExtension;
+            set => Set(ref _newPriorityExtension, value);
+        }
+
         public string? SelectedBusiness
         {
             get => _selectedBusiness;
@@ -63,22 +98,41 @@ namespace EasySave.GUI.ViewModels
             set => Set(ref _selectedExtension, value);
         }
 
+        public string? SelectedPriorityExtension
+        {
+            get => _selectedPriorityExtension;
+            set => Set(ref _selectedPriorityExtension, value);
+        }
+
+        public long MaxFileSizeKB
+        {
+            get => _maxFileSizeKB;
+            set => Set(ref _maxFileSizeKB, value);
+        }
+
         public ObservableCollection<string> BusinessSoftwareList { get; } = new();
         public ObservableCollection<string> EncryptedExtensions { get; } = new();
+        public ObservableCollection<string> PriorityExtensions { get; } = new();
 
         public ICommand AddBusinessCommand { get; }
         public ICommand RemoveBusinessCommand { get; }
         public ICommand AddExtensionCommand { get; }
         public ICommand RemoveExtensionCommand { get; }
+        public ICommand AddPriorityExtensionCommand { get; }
+        public ICommand RemovePriorityExtensionCommand { get; }
 
         public SettingsViewModel(AppSettings s)
         {
             _logFormat = s.LogFormat;
             _cryptoSoftPath = s.CryptoSoftPath;
             _language = s.Language;
+            _dockerLogMode = s.DockerLogMode;
+            _dockerLogUrl = s.DockerLogUrl;
+            _maxFileSizeKB = s.MaxFileSizeKB;
 
             foreach (var b in s.BusinessSoftware) BusinessSoftwareList.Add(b);
             foreach (var e in s.EncryptedExtensions) EncryptedExtensions.Add(e);
+            foreach (var p in s.PriorityExtensions) PriorityExtensions.Add(p);
 
             AddBusinessCommand = new RelayCommand(_ =>
             {
@@ -104,6 +158,21 @@ namespace EasySave.GUI.ViewModels
             RemoveExtensionCommand = new RelayCommand(
                 _ => { if (SelectedExtension != null) EncryptedExtensions.Remove(SelectedExtension); },
                 _ => SelectedExtension != null);
+
+            AddPriorityExtensionCommand = new RelayCommand(_ =>
+            {
+                if (!string.IsNullOrWhiteSpace(NewPriorityExtension))
+                {
+                    string ext = NewPriorityExtension.Trim().ToLowerInvariant();
+                    if (!ext.StartsWith(".")) ext = "." + ext;
+                    PriorityExtensions.Add(ext);
+                    NewPriorityExtension = string.Empty;
+                }
+            });
+
+            RemovePriorityExtensionCommand = new RelayCommand(
+                _ => { if (SelectedPriorityExtension != null) PriorityExtensions.Remove(SelectedPriorityExtension); },
+                _ => SelectedPriorityExtension != null);
         }
 
         public AppSettings ToModel() => new AppSettings
@@ -112,7 +181,11 @@ namespace EasySave.GUI.ViewModels
             CryptoSoftPath = CryptoSoftPath,
             Language = Language,
             BusinessSoftware = new System.Collections.Generic.List<string>(BusinessSoftwareList),
-            EncryptedExtensions = new System.Collections.Generic.List<string>(EncryptedExtensions)
+            EncryptedExtensions = new System.Collections.Generic.List<string>(EncryptedExtensions),
+            DockerLogMode = _dockerLogMode,
+            DockerLogUrl = DockerLogUrl,
+            PriorityExtensions = new System.Collections.Generic.List<string>(PriorityExtensions),
+            MaxFileSizeKB = MaxFileSizeKB
         };
     }
 }

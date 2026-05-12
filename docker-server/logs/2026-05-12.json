@@ -1,0 +1,1244 @@
+[
+  {
+    "Name": "docker test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\heyeyeyehsz.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\heyeyeyehsz.txt",
+    "FileSize": 17,
+    "FileTransferTime": 0.9014,
+    "EncryptionTime": 128.1157,
+    "Time": "12/05/2026 13:22:38"
+  },
+  {
+    "Name": "docker test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\PBL 4 Memory Management.docx",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\PBL 4 Memory Management.docx",
+    "FileSize": 16124,
+    "FileTransferTime": 0.9982,
+    "EncryptionTime": 104.8247,
+    "Time": "12/05/2026 13:22:38"
+  },
+  {
+    "Name": "docker test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test doc crypto.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test doc crypto.txt",
+    "FileSize": 15,
+    "FileTransferTime": 1.1757,
+    "EncryptionTime": 95.965,
+    "Time": "12/05/2026 13:22:38"
+  },
+  {
+    "Name": "docker test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test.txt",
+    "FileSize": 30,
+    "FileTransferTime": 0.96,
+    "EncryptionTime": 107.9556,
+    "Time": "12/05/2026 13:22:38"
+  },
+  {
+    "Name": "hhhhhhhhhhhhkkspsm",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\heyeyeyehsz.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\heyeyeyehsz.txt",
+    "FileSize": 17,
+    "FileTransferTime": 0.6944,
+    "EncryptionTime": 102.0159,
+    "Time": "12/05/2026 13:27:07"
+  },
+  {
+    "Name": "hhhhhhhhhhhhkkspsm",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\PBL 4 Memory Management.docx",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\PBL 4 Memory Management.docx",
+    "FileSize": 16124,
+    "FileTransferTime": 0.6311,
+    "EncryptionTime": 103.895,
+    "Time": "12/05/2026 13:27:07"
+  },
+  {
+    "Name": "hhhhhhhhhhhhkkspsm",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test doc crypto.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test doc crypto.txt",
+    "FileSize": 15,
+    "FileTransferTime": 0.6654,
+    "EncryptionTime": 106.6037,
+    "Time": "12/05/2026 13:27:07"
+  },
+  {
+    "Name": "hhhhhhhhhhhhkkspsm",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test storage .txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test storage .txt",
+    "FileSize": 487,
+    "FileTransferTime": 0.6479,
+    "EncryptionTime": 117.0185,
+    "Time": "12/05/2026 13:27:07"
+  },
+  {
+    "Name": "hhhhhhhhhhhhkkspsm",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test.txt",
+    "FileSize": 30,
+    "FileTransferTime": 0.7421,
+    "EncryptionTime": 103.6953,
+    "Time": "12/05/2026 13:27:07"
+  },
+  {
+    "Name": "hhhhhhhhhhhhkkspsm",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\heyeyeyehsz.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\heyeyeyehsz.txt",
+    "FileSize": 17,
+    "FileTransferTime": 0.6262,
+    "EncryptionTime": 115.3444,
+    "Time": "12/05/2026 13:27:10"
+  },
+  {
+    "Name": "hhhhhhhhhhhhkkspsm",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\PBL 4 Memory Management.docx",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\PBL 4 Memory Management.docx",
+    "FileSize": 16124,
+    "FileTransferTime": 0.6477,
+    "EncryptionTime": 107.1852,
+    "Time": "12/05/2026 13:27:10"
+  },
+  {
+    "Name": "hhhhhhhhhhhhkkspsm",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test doc crypto.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test doc crypto.txt",
+    "FileSize": 15,
+    "FileTransferTime": 0.6649,
+    "EncryptionTime": 105.4716,
+    "Time": "12/05/2026 13:27:10"
+  },
+  {
+    "Name": "hhhhhhhhhhhhkkspsm",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test storage .txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test storage .txt",
+    "FileSize": 487,
+    "FileTransferTime": 0.6547,
+    "EncryptionTime": 109.3965,
+    "Time": "12/05/2026 13:27:10"
+  },
+  {
+    "Name": "hhhhhhhhhhhhkkspsm",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test.txt",
+    "FileSize": 30,
+    "FileTransferTime": 1.0335,
+    "EncryptionTime": 116.3901,
+    "Time": "12/05/2026 13:27:10"
+  },
+  {
+    "Name": "hhhhhhhhhhhhkkspsm",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\heyeyeyehsz.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\heyeyeyehsz.txt",
+    "FileSize": 17,
+    "FileTransferTime": 0.6305,
+    "EncryptionTime": 103.8327,
+    "Time": "12/05/2026 13:29:39"
+  },
+  {
+    "Name": "hhhhhhhhhhhhkkspsm",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\PBL 4 Memory Management.docx",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\PBL 4 Memory Management.docx",
+    "FileSize": 16124,
+    "FileTransferTime": 0.7028,
+    "EncryptionTime": 106.9,
+    "Time": "12/05/2026 13:29:39"
+  },
+  {
+    "Name": "hhhhhhhhhhhhkkspsm",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test doc crypto.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test doc crypto.txt",
+    "FileSize": 15,
+    "FileTransferTime": 0.6218,
+    "EncryptionTime": 103.3277,
+    "Time": "12/05/2026 13:29:39"
+  },
+  {
+    "Name": "hhhhhhhhhhhhkkspsm",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test storage .txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test storage .txt",
+    "FileSize": 1100,
+    "FileTransferTime": 0.7662,
+    "EncryptionTime": 108.7769,
+    "Time": "12/05/2026 13:29:39"
+  },
+  {
+    "Name": "hhhhhhhhhhhhkkspsm",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test.txt",
+    "FileSize": 30,
+    "FileTransferTime": 0.606,
+    "EncryptionTime": 104.5064,
+    "Time": "12/05/2026 13:29:39"
+  },
+  {
+    "Name": "crypto test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\heyeyeyehsz.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\heyeyeyehsz.txt",
+    "FileSize": 17,
+    "FileTransferTime": 4.189,
+    "EncryptionTime": 108.6585,
+    "Time": "12/05/2026 13:33:23"
+  },
+  {
+    "Name": "jojojojo=",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\heyeyeyehsz.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\heyeyeyehsz.txt",
+    "FileSize": 17,
+    "FileTransferTime": 4.1668,
+    "EncryptionTime": 104.8407,
+    "Time": "12/05/2026 13:33:23"
+  },
+  {
+    "Name": "docker test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\heyeyeyehsz.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\heyeyeyehsz.txt",
+    "FileSize": 17,
+    "FileTransferTime": 0.9386,
+    "EncryptionTime": 95.23,
+    "Time": "12/05/2026 13:33:23"
+  },
+  {
+    "Name": "crypto test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\PBL 4 Memory Management.docx",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\PBL 4 Memory Management.docx",
+    "FileSize": 16124,
+    "FileTransferTime": 0.7245,
+    "EncryptionTime": 97.8964,
+    "Time": "12/05/2026 13:33:23"
+  },
+  {
+    "Name": "jojojojo=",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\PBL 4 Memory Management.docx",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\PBL 4 Memory Management.docx",
+    "FileSize": 16124,
+    "FileTransferTime": 0.7676,
+    "EncryptionTime": 102.2389,
+    "Time": "12/05/2026 13:33:23"
+  },
+  {
+    "Name": "docker test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\PBL 4 Memory Management.docx",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\PBL 4 Memory Management.docx",
+    "FileSize": 16124,
+    "FileTransferTime": 0.898,
+    "EncryptionTime": 107.4391,
+    "Time": "12/05/2026 13:33:23"
+  },
+  {
+    "Name": "crypto test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test doc crypto.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test doc crypto.txt",
+    "FileSize": 15,
+    "FileTransferTime": 0.808,
+    "EncryptionTime": 105.1482,
+    "Time": "12/05/2026 13:33:23"
+  },
+  {
+    "Name": "jojojojo=",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test doc crypto.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test doc crypto.txt",
+    "FileSize": 15,
+    "FileTransferTime": 0.6282,
+    "EncryptionTime": 98.5716,
+    "Time": "12/05/2026 13:33:23"
+  },
+  {
+    "Name": "docker test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test doc crypto.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test doc crypto.txt",
+    "FileSize": 15,
+    "FileTransferTime": 1.1256,
+    "EncryptionTime": 97.8229,
+    "Time": "12/05/2026 13:33:24"
+  },
+  {
+    "Name": "crypto test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test storage .txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test storage .txt",
+    "FileSize": 1100,
+    "FileTransferTime": 2.1947,
+    "EncryptionTime": 98.8959,
+    "Time": "12/05/2026 13:33:24"
+  },
+  {
+    "Name": "jojojojo=",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test storage .txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test storage .txt",
+    "FileSize": 1100,
+    "FileTransferTime": 0.6084,
+    "EncryptionTime": 83.1899,
+    "Time": "12/05/2026 13:33:24"
+  },
+  {
+    "Name": "docker test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test storage .txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test storage .txt",
+    "FileSize": 1100,
+    "FileTransferTime": 0.6295,
+    "EncryptionTime": 91.5339,
+    "Time": "12/05/2026 13:33:24"
+  },
+  {
+    "Name": "crypto test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test.txt",
+    "FileSize": 30,
+    "FileTransferTime": 0.6923,
+    "EncryptionTime": 98.6717,
+    "Time": "12/05/2026 13:33:24"
+  },
+  {
+    "Name": "jojojojo=",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test.txt",
+    "FileSize": 30,
+    "FileTransferTime": 0.7256,
+    "EncryptionTime": 91.0986,
+    "Time": "12/05/2026 13:33:24"
+  },
+  {
+    "Name": "docker test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test.txt",
+    "FileSize": 30,
+    "FileTransferTime": 0.7416,
+    "EncryptionTime": 93.6126,
+    "Time": "12/05/2026 13:33:24"
+  },
+  {
+    "Name": "crypto test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test_storage_1.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test_storage_1.txt",
+    "FileSize": 1100,
+    "FileTransferTime": 0.5919,
+    "EncryptionTime": 104.2117,
+    "Time": "12/05/2026 13:33:24"
+  },
+  {
+    "Name": "jojojojo=",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test_storage_1.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test_storage_1.txt",
+    "FileSize": 1100,
+    "FileTransferTime": 0.6295,
+    "EncryptionTime": 95.9469,
+    "Time": "12/05/2026 13:33:24"
+  },
+  {
+    "Name": "docker test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test_storage_1.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test_storage_1.txt",
+    "FileSize": 1100,
+    "FileTransferTime": 0.7039,
+    "EncryptionTime": 103.4026,
+    "Time": "12/05/2026 13:33:24"
+  },
+  {
+    "Name": "crypto test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test_storage_3.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test_storage_3.txt",
+    "FileSize": 1100,
+    "FileTransferTime": 0.9812,
+    "EncryptionTime": 111.4965,
+    "Time": "12/05/2026 13:33:25"
+  },
+  {
+    "Name": "jojojojo=",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test_storage_3.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test_storage_3.txt",
+    "FileSize": 1100,
+    "FileTransferTime": 0.6995,
+    "EncryptionTime": 94.9468,
+    "Time": "12/05/2026 13:33:25"
+  },
+  {
+    "Name": "docker test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test_storage_3.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test_storage_3.txt",
+    "FileSize": 1100,
+    "FileTransferTime": 0.7018,
+    "EncryptionTime": 99.5534,
+    "Time": "12/05/2026 13:33:25"
+  },
+  {
+    "Name": "hhhhhhhhhhhhkkspsm",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\heyeyeyehsz.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\heyeyeyehsz.txt",
+    "FileSize": 17,
+    "FileTransferTime": 1.1416,
+    "EncryptionTime": 86.0858,
+    "Time": "12/05/2026 13:33:25"
+  },
+  {
+    "Name": "hhhhhhhhhhhhkkspsm",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\PBL 4 Memory Management.docx",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\PBL 4 Memory Management.docx",
+    "FileSize": 16124,
+    "FileTransferTime": 75.9416,
+    "EncryptionTime": 117.073,
+    "Time": "12/05/2026 13:33:25"
+  },
+  {
+    "Name": "hhhhhhhhhhhhkkspsm",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test doc crypto.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test doc crypto.txt",
+    "FileSize": 15,
+    "FileTransferTime": 0.657,
+    "EncryptionTime": 100.4286,
+    "Time": "12/05/2026 13:33:25"
+  },
+  {
+    "Name": "hhhhhhhhhhhhkkspsm",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test storage .txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test storage .txt",
+    "FileSize": 1100,
+    "FileTransferTime": 0.717,
+    "EncryptionTime": 128.5125,
+    "Time": "12/05/2026 13:33:25"
+  },
+  {
+    "Name": "hhhhhhhhhhhhkkspsm",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test.txt",
+    "FileSize": 30,
+    "FileTransferTime": 0.7688,
+    "EncryptionTime": 92.1326,
+    "Time": "12/05/2026 13:33:25"
+  },
+  {
+    "Name": "hhhhhhhhhhhhkkspsm",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test_storage_1.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test_storage_1.txt",
+    "FileSize": 1100,
+    "FileTransferTime": 0.6033,
+    "EncryptionTime": 110.0173,
+    "Time": "12/05/2026 13:33:26"
+  },
+  {
+    "Name": "hhhhhhhhhhhhkkspsm",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test_storage_3.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test_storage_3.txt",
+    "FileSize": 1100,
+    "FileTransferTime": 0.6021,
+    "EncryptionTime": 111.9176,
+    "Time": "12/05/2026 13:33:26"
+  },
+  {
+    "Name": "crypto test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\heyeyeyehsz.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\heyeyeyehsz.txt",
+    "FileSize": 17,
+    "FileTransferTime": 0.729,
+    "EncryptionTime": 104.5937,
+    "Time": "12/05/2026 13:33:44"
+  },
+  {
+    "Name": "jojojojo=",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\heyeyeyehsz.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\heyeyeyehsz.txt",
+    "FileSize": 17,
+    "FileTransferTime": 3.5829,
+    "EncryptionTime": 97.6237,
+    "Time": "12/05/2026 13:33:44"
+  },
+  {
+    "Name": "hhhhhhhhhhhhkkspsm",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\heyeyeyehsz.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\heyeyeyehsz.txt",
+    "FileSize": 17,
+    "FileTransferTime": 0.5673,
+    "EncryptionTime": 102.1376,
+    "Time": "12/05/2026 13:33:45"
+  },
+  {
+    "Name": "docker test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\heyeyeyehsz.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\heyeyeyehsz.txt",
+    "FileSize": 17,
+    "FileTransferTime": 0.5263,
+    "EncryptionTime": 94.2401,
+    "Time": "12/05/2026 13:33:45"
+  },
+  {
+    "Name": "jojojojo=",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\PBL 4 Memory Management.docx",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\PBL 4 Memory Management.docx",
+    "FileSize": 16124,
+    "FileTransferTime": 0.6084,
+    "EncryptionTime": 101.6356,
+    "Time": "12/05/2026 13:33:45"
+  },
+  {
+    "Name": "hhhhhhhhhhhhkkspsm",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\PBL 4 Memory Management.docx",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\PBL 4 Memory Management.docx",
+    "FileSize": 16124,
+    "FileTransferTime": 0.8123,
+    "EncryptionTime": 105.2526,
+    "Time": "12/05/2026 13:33:45"
+  },
+  {
+    "Name": "docker test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\PBL 4 Memory Management.docx",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\PBL 4 Memory Management.docx",
+    "FileSize": 16124,
+    "FileTransferTime": 0.6616,
+    "EncryptionTime": 99.2534,
+    "Time": "12/05/2026 13:33:45"
+  },
+  {
+    "Name": "jojojojo=",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test doc crypto.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test doc crypto.txt",
+    "FileSize": 15,
+    "FileTransferTime": 0.9391,
+    "EncryptionTime": 98.0258,
+    "Time": "12/05/2026 13:33:45"
+  },
+  {
+    "Name": "hhhhhhhhhhhhkkspsm",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test doc crypto.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test doc crypto.txt",
+    "FileSize": 15,
+    "FileTransferTime": 0.7265,
+    "EncryptionTime": 94.8479,
+    "Time": "12/05/2026 13:33:45"
+  },
+  {
+    "Name": "docker test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test doc crypto.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test doc crypto.txt",
+    "FileSize": 15,
+    "FileTransferTime": 0.6535,
+    "EncryptionTime": 119.1553,
+    "Time": "12/05/2026 13:33:45"
+  },
+  {
+    "Name": "jojojojo=",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test storage .txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test storage .txt",
+    "FileSize": 1100,
+    "FileTransferTime": 0.7209,
+    "EncryptionTime": 86.4686,
+    "Time": "12/05/2026 13:33:45"
+  },
+  {
+    "Name": "hhhhhhhhhhhhkkspsm",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test storage .txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test storage .txt",
+    "FileSize": 1100,
+    "FileTransferTime": 0.5706,
+    "EncryptionTime": 89.2043,
+    "Time": "12/05/2026 13:33:45"
+  },
+  {
+    "Name": "docker test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test storage .txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test storage .txt",
+    "FileSize": 1100,
+    "FileTransferTime": 0.6295,
+    "EncryptionTime": 94.4925,
+    "Time": "12/05/2026 13:33:46"
+  },
+  {
+    "Name": "jojojojo=",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test.txt",
+    "FileSize": 30,
+    "FileTransferTime": 0.7844,
+    "EncryptionTime": 95.5485,
+    "Time": "12/05/2026 13:33:46"
+  },
+  {
+    "Name": "hhhhhhhhhhhhkkspsm",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test.txt",
+    "FileSize": 30,
+    "FileTransferTime": 3.4083,
+    "EncryptionTime": 101.9208,
+    "Time": "12/05/2026 13:33:46"
+  },
+  {
+    "Name": "docker test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test.txt",
+    "FileSize": 30,
+    "FileTransferTime": 5.4671,
+    "EncryptionTime": 98.5394,
+    "Time": "12/05/2026 13:33:46"
+  },
+  {
+    "Name": "jojojojo=",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test_storage_1.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test_storage_1.txt",
+    "FileSize": 1100,
+    "FileTransferTime": 2.7881,
+    "EncryptionTime": 108.8418,
+    "Time": "12/05/2026 13:33:46"
+  },
+  {
+    "Name": "hhhhhhhhhhhhkkspsm",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test_storage_1.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test_storage_1.txt",
+    "FileSize": 1100,
+    "FileTransferTime": 0.8062,
+    "EncryptionTime": 103.1667,
+    "Time": "12/05/2026 13:33:46"
+  },
+  {
+    "Name": "docker test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test_storage_1.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test_storage_1.txt",
+    "FileSize": 1100,
+    "FileTransferTime": 0.9708,
+    "EncryptionTime": 107.3835,
+    "Time": "12/05/2026 13:33:46"
+  },
+  {
+    "Name": "jojojojo=",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test_storage_3.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test_storage_3.txt",
+    "FileSize": 1100,
+    "FileTransferTime": 1.9842,
+    "EncryptionTime": 101.9614,
+    "Time": "12/05/2026 13:33:46"
+  },
+  {
+    "Name": "hhhhhhhhhhhhkkspsm",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test_storage_3.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test_storage_3.txt",
+    "FileSize": 1100,
+    "FileTransferTime": 0.6276,
+    "EncryptionTime": 105.5717,
+    "Time": "12/05/2026 13:33:46"
+  },
+  {
+    "Name": "docker test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test_storage_3.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test_storage_3.txt",
+    "FileSize": 1100,
+    "FileTransferTime": 0.6747,
+    "EncryptionTime": 99.7105,
+    "Time": "12/05/2026 13:33:47"
+  },
+  {
+    "Name": "crypto test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\PBL 4 Memory Management.docx",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\PBL 4 Memory Management.docx",
+    "FileSize": 16124,
+    "FileTransferTime": 0.7413,
+    "EncryptionTime": 90.5295,
+    "Time": "12/05/2026 13:33:47"
+  },
+  {
+    "Name": "crypto test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test doc crypto.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test doc crypto.txt",
+    "FileSize": 15,
+    "FileTransferTime": 0.5694,
+    "EncryptionTime": 106.7514,
+    "Time": "12/05/2026 13:33:47"
+  },
+  {
+    "Name": "crypto test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test storage .txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test storage .txt",
+    "FileSize": 1100,
+    "FileTransferTime": 0.5923,
+    "EncryptionTime": 119.8383,
+    "Time": "12/05/2026 13:33:47"
+  },
+  {
+    "Name": "crypto test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test.txt",
+    "FileSize": 30,
+    "FileTransferTime": 0.6182,
+    "EncryptionTime": 90.4883,
+    "Time": "12/05/2026 13:33:47"
+  },
+  {
+    "Name": "crypto test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test_storage_1.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test_storage_1.txt",
+    "FileSize": 1100,
+    "FileTransferTime": 0.6216,
+    "EncryptionTime": 115.6567,
+    "Time": "12/05/2026 13:33:47"
+  },
+  {
+    "Name": "crypto test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test_storage_3.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test_storage_3.txt",
+    "FileSize": 1100,
+    "FileTransferTime": 0.5594,
+    "EncryptionTime": 117.538,
+    "Time": "12/05/2026 13:33:47"
+  },
+  {
+    "Name": "crypto test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\heyeyeyehsz.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\heyeyeyehsz.txt",
+    "FileSize": 17,
+    "FileTransferTime": 5.4865,
+    "EncryptionTime": 137.7859,
+    "Time": "12/05/2026 13:34:04"
+  },
+  {
+    "Name": "jojojojo=",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\heyeyeyehsz.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\heyeyeyehsz.txt",
+    "FileSize": 17,
+    "FileTransferTime": 5.4678,
+    "EncryptionTime": 99.6633,
+    "Time": "12/05/2026 13:34:04"
+  },
+  {
+    "Name": "hhhhhhhhhhhhkkspsm",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\heyeyeyehsz.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\heyeyeyehsz.txt",
+    "FileSize": 17,
+    "FileTransferTime": 2.4422,
+    "EncryptionTime": 99.0423,
+    "Time": "12/05/2026 13:34:04"
+  },
+  {
+    "Name": "docker test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\heyeyeyehsz.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\heyeyeyehsz.txt",
+    "FileSize": 17,
+    "FileTransferTime": 4.941,
+    "EncryptionTime": 100.7127,
+    "Time": "12/05/2026 13:34:04"
+  },
+  {
+    "Name": "jojojojo=",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\PBL 4 Memory Management.docx",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\PBL 4 Memory Management.docx",
+    "FileSize": 16124,
+    "FileTransferTime": 0.7741,
+    "EncryptionTime": 103.4854,
+    "Time": "12/05/2026 13:34:04"
+  },
+  {
+    "Name": "hhhhhhhhhhhhkkspsm",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\PBL 4 Memory Management.docx",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\PBL 4 Memory Management.docx",
+    "FileSize": 16124,
+    "FileTransferTime": 0.6814,
+    "EncryptionTime": 96.5869,
+    "Time": "12/05/2026 13:34:04"
+  },
+  {
+    "Name": "docker test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\PBL 4 Memory Management.docx",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\PBL 4 Memory Management.docx",
+    "FileSize": 16124,
+    "FileTransferTime": 1.356,
+    "EncryptionTime": 106.8257,
+    "Time": "12/05/2026 13:34:04"
+  },
+  {
+    "Name": "jojojojo=",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test doc crypto.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test doc crypto.txt",
+    "FileSize": 15,
+    "FileTransferTime": 0.6755,
+    "EncryptionTime": 98.4526,
+    "Time": "12/05/2026 13:34:04"
+  },
+  {
+    "Name": "hhhhhhhhhhhhkkspsm",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test doc crypto.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test doc crypto.txt",
+    "FileSize": 15,
+    "FileTransferTime": 0.7501,
+    "EncryptionTime": 107.8194,
+    "Time": "12/05/2026 13:34:04"
+  },
+  {
+    "Name": "docker test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test doc crypto.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test doc crypto.txt",
+    "FileSize": 15,
+    "FileTransferTime": 0.6743,
+    "EncryptionTime": 103.4939,
+    "Time": "12/05/2026 13:34:05"
+  },
+  {
+    "Name": "jojojojo=",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test storage .txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test storage .txt",
+    "FileSize": 1100,
+    "FileTransferTime": 0.6439,
+    "EncryptionTime": 105.0088,
+    "Time": "12/05/2026 13:34:05"
+  },
+  {
+    "Name": "hhhhhhhhhhhhkkspsm",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test storage .txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test storage .txt",
+    "FileSize": 1100,
+    "FileTransferTime": 0.6781,
+    "EncryptionTime": 96.5923,
+    "Time": "12/05/2026 13:34:05"
+  },
+  {
+    "Name": "docker test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test storage .txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test storage .txt",
+    "FileSize": 1100,
+    "FileTransferTime": 0.6858,
+    "EncryptionTime": 105.1173,
+    "Time": "12/05/2026 13:34:05"
+  },
+  {
+    "Name": "jojojojo=",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test.txt",
+    "FileSize": 30,
+    "FileTransferTime": 0.6639,
+    "EncryptionTime": 97.4724,
+    "Time": "12/05/2026 13:34:05"
+  },
+  {
+    "Name": "hhhhhhhhhhhhkkspsm",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test.txt",
+    "FileSize": 30,
+    "FileTransferTime": 0.7664,
+    "EncryptionTime": 93.9026,
+    "Time": "12/05/2026 13:34:05"
+  },
+  {
+    "Name": "docker test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test.txt",
+    "FileSize": 30,
+    "FileTransferTime": 0.6521,
+    "EncryptionTime": 80.6635,
+    "Time": "12/05/2026 13:34:05"
+  },
+  {
+    "Name": "jojojojo=",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test_storage_1.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test_storage_1.txt",
+    "FileSize": 1100,
+    "FileTransferTime": 0.7455,
+    "EncryptionTime": 92.5481,
+    "Time": "12/05/2026 13:34:05"
+  },
+  {
+    "Name": "hhhhhhhhhhhhkkspsm",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test_storage_1.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test_storage_1.txt",
+    "FileSize": 1100,
+    "FileTransferTime": 0.6838,
+    "EncryptionTime": 118.3557,
+    "Time": "12/05/2026 13:34:05"
+  },
+  {
+    "Name": "docker test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test_storage_1.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test_storage_1.txt",
+    "FileSize": 1100,
+    "FileTransferTime": 0.7386,
+    "EncryptionTime": 102.0444,
+    "Time": "12/05/2026 13:34:05"
+  },
+  {
+    "Name": "jojojojo=",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test_storage_3.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test_storage_3.txt",
+    "FileSize": 1100,
+    "FileTransferTime": 0.7417,
+    "EncryptionTime": 104.6814,
+    "Time": "12/05/2026 13:34:06"
+  },
+  {
+    "Name": "hhhhhhhhhhhhkkspsm",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test_storage_3.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test_storage_3.txt",
+    "FileSize": 1100,
+    "FileTransferTime": 0.6476,
+    "EncryptionTime": 96.4254,
+    "Time": "12/05/2026 13:34:06"
+  },
+  {
+    "Name": "docker test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test_storage_3.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test_storage_3.txt",
+    "FileSize": 1100,
+    "FileTransferTime": 0.6448,
+    "EncryptionTime": 99.6792,
+    "Time": "12/05/2026 13:34:06"
+  },
+  {
+    "Name": "crypto test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\PBL 4 Memory Management.docx",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\PBL 4 Memory Management.docx",
+    "FileSize": 16124,
+    "FileTransferTime": 0.8257,
+    "EncryptionTime": 90.5356,
+    "Time": "12/05/2026 13:34:06"
+  },
+  {
+    "Name": "crypto test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test doc crypto.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test doc crypto.txt",
+    "FileSize": 15,
+    "FileTransferTime": 0.677,
+    "EncryptionTime": 104.4972,
+    "Time": "12/05/2026 13:34:06"
+  },
+  {
+    "Name": "crypto test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test storage .txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test storage .txt",
+    "FileSize": 1100,
+    "FileTransferTime": 0.6539,
+    "EncryptionTime": 108.1741,
+    "Time": "12/05/2026 13:34:06"
+  },
+  {
+    "Name": "crypto test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test.txt",
+    "FileSize": 30,
+    "FileTransferTime": 0.6731,
+    "EncryptionTime": 88.9759,
+    "Time": "12/05/2026 13:34:06"
+  },
+  {
+    "Name": "crypto test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test_storage_1.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test_storage_1.txt",
+    "FileSize": 1100,
+    "FileTransferTime": 0.716,
+    "EncryptionTime": 100.3521,
+    "Time": "12/05/2026 13:34:06"
+  },
+  {
+    "Name": "crypto test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test_storage_3.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test_storage_3.txt",
+    "FileSize": 1100,
+    "FileTransferTime": 0.7147,
+    "EncryptionTime": 108.8739,
+    "Time": "12/05/2026 13:34:06"
+  },
+  {
+    "Name": "crypto test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\heyeyeyehsz.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\heyeyeyehsz.txt",
+    "FileSize": 17,
+    "FileTransferTime": 0.7704,
+    "EncryptionTime": 105.3969,
+    "Time": "12/05/2026 13:34:10"
+  },
+  {
+    "Name": "jojojojo=",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\heyeyeyehsz.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\heyeyeyehsz.txt",
+    "FileSize": 17,
+    "FileTransferTime": 1.0596,
+    "EncryptionTime": 102.9556,
+    "Time": "12/05/2026 13:34:10"
+  },
+  {
+    "Name": "hhhhhhhhhhhhkkspsm",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\heyeyeyehsz.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\heyeyeyehsz.txt",
+    "FileSize": 17,
+    "FileTransferTime": 0.7969,
+    "EncryptionTime": 99.4242,
+    "Time": "12/05/2026 13:34:10"
+  },
+  {
+    "Name": "docker test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\heyeyeyehsz.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\heyeyeyehsz.txt",
+    "FileSize": 17,
+    "FileTransferTime": 1.1742,
+    "EncryptionTime": 98.9933,
+    "Time": "12/05/2026 13:34:10"
+  },
+  {
+    "Name": "jojojojo=",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\PBL 4 Memory Management.docx",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\PBL 4 Memory Management.docx",
+    "FileSize": 16124,
+    "FileTransferTime": 0.829,
+    "EncryptionTime": 111.6145,
+    "Time": "12/05/2026 13:34:10"
+  },
+  {
+    "Name": "hhhhhhhhhhhhkkspsm",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\PBL 4 Memory Management.docx",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\PBL 4 Memory Management.docx",
+    "FileSize": 16124,
+    "FileTransferTime": 0.7118,
+    "EncryptionTime": 104.6017,
+    "Time": "12/05/2026 13:34:10"
+  },
+  {
+    "Name": "docker test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\PBL 4 Memory Management.docx",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\PBL 4 Memory Management.docx",
+    "FileSize": 16124,
+    "FileTransferTime": 0.6182,
+    "EncryptionTime": 99.2645,
+    "Time": "12/05/2026 13:34:10"
+  },
+  {
+    "Name": "jojojojo=",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test doc crypto.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test doc crypto.txt",
+    "FileSize": 15,
+    "FileTransferTime": 0.6787,
+    "EncryptionTime": 96.1525,
+    "Time": "12/05/2026 13:34:10"
+  },
+  {
+    "Name": "hhhhhhhhhhhhkkspsm",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test doc crypto.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test doc crypto.txt",
+    "FileSize": 15,
+    "FileTransferTime": 0.7034,
+    "EncryptionTime": 101.8751,
+    "Time": "12/05/2026 13:34:10"
+  },
+  {
+    "Name": "docker test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test doc crypto.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test doc crypto.txt",
+    "FileSize": 15,
+    "FileTransferTime": 0.6862,
+    "EncryptionTime": 100.8748,
+    "Time": "12/05/2026 13:34:11"
+  },
+  {
+    "Name": "jojojojo=",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test storage .txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test storage .txt",
+    "FileSize": 1100,
+    "FileTransferTime": 0.5814,
+    "EncryptionTime": 87.6289,
+    "Time": "12/05/2026 13:34:11"
+  },
+  {
+    "Name": "hhhhhhhhhhhhkkspsm",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test storage .txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test storage .txt",
+    "FileSize": 1100,
+    "FileTransferTime": 0.6622,
+    "EncryptionTime": 86.0171,
+    "Time": "12/05/2026 13:34:11"
+  },
+  {
+    "Name": "docker test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test storage .txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test storage .txt",
+    "FileSize": 1100,
+    "FileTransferTime": 0.5569,
+    "EncryptionTime": 104.1296,
+    "Time": "12/05/2026 13:34:11"
+  },
+  {
+    "Name": "crypto test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\PBL 4 Memory Management.docx",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\PBL 4 Memory Management.docx",
+    "FileSize": 16124,
+    "FileTransferTime": 0.7843,
+    "EncryptionTime": 101.1327,
+    "Time": "12/05/2026 13:34:11"
+  },
+  {
+    "Name": "hhhhhhhhhhhhkkspsm",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test.txt",
+    "FileSize": 30,
+    "FileTransferTime": 0.6948,
+    "EncryptionTime": 97.202,
+    "Time": "12/05/2026 13:34:11"
+  },
+  {
+    "Name": "docker test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test.txt",
+    "FileSize": 30,
+    "FileTransferTime": 0.6371,
+    "EncryptionTime": 97.4461,
+    "Time": "12/05/2026 13:34:11"
+  },
+  {
+    "Name": "crypto test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test doc crypto.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test doc crypto.txt",
+    "FileSize": 15,
+    "FileTransferTime": 0.6157,
+    "EncryptionTime": 93.4162,
+    "Time": "12/05/2026 13:34:11"
+  },
+  {
+    "Name": "hhhhhhhhhhhhkkspsm",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test_storage_1.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test_storage_1.txt",
+    "FileSize": 1100,
+    "FileTransferTime": 0.8281,
+    "EncryptionTime": 113.1827,
+    "Time": "12/05/2026 13:34:11"
+  },
+  {
+    "Name": "docker test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test_storage_1.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test_storage_1.txt",
+    "FileSize": 1100,
+    "FileTransferTime": 0.7059,
+    "EncryptionTime": 100.8599,
+    "Time": "12/05/2026 13:34:11"
+  },
+  {
+    "Name": "crypto test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test storage .txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test storage .txt",
+    "FileSize": 1100,
+    "FileTransferTime": 0.6545,
+    "EncryptionTime": 111.1175,
+    "Time": "12/05/2026 13:34:12"
+  },
+  {
+    "Name": "hhhhhhhhhhhhkkspsm",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test_storage_3.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test_storage_3.txt",
+    "FileSize": 1100,
+    "FileTransferTime": 0.5655,
+    "EncryptionTime": 119.0555,
+    "Time": "12/05/2026 13:34:12"
+  },
+  {
+    "Name": "docker test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test_storage_3.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test_storage_3.txt",
+    "FileSize": 1100,
+    "FileTransferTime": 0.8192,
+    "EncryptionTime": 98.5284,
+    "Time": "12/05/2026 13:34:12"
+  },
+  {
+    "Name": "crypto test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test.txt",
+    "FileSize": 30,
+    "FileTransferTime": 0.6635,
+    "EncryptionTime": 108.7247,
+    "Time": "12/05/2026 13:34:12"
+  },
+  {
+    "Name": "crypto test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test_storage_1.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test_storage_1.txt",
+    "FileSize": 1100,
+    "FileTransferTime": 0.6133,
+    "EncryptionTime": 105.158,
+    "Time": "12/05/2026 13:34:12"
+  },
+  {
+    "Name": "crypto test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test_storage_3.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test_storage_3.txt",
+    "FileSize": 1100,
+    "FileTransferTime": 0.7402,
+    "EncryptionTime": 106.1541,
+    "Time": "12/05/2026 13:34:12"
+  },
+  {
+    "Name": "crypto test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\heyeyeyehsz.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\heyeyeyehsz.txt",
+    "FileSize": 17,
+    "FileTransferTime": 0.8866,
+    "EncryptionTime": 117.6461,
+    "Time": "12/05/2026 13:34:23"
+  },
+  {
+    "Name": "crypto test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\PBL 4 Memory Management.docx",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\PBL 4 Memory Management.docx",
+    "FileSize": 16124,
+    "FileTransferTime": 0.7279,
+    "EncryptionTime": 107.2181,
+    "Time": "12/05/2026 13:34:23"
+  },
+  {
+    "Name": "crypto test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test doc crypto.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test doc crypto.txt",
+    "FileSize": 15,
+    "FileTransferTime": 0.6696,
+    "EncryptionTime": 101.314,
+    "Time": "12/05/2026 13:34:23"
+  },
+  {
+    "Name": "crypto test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test storage .txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test storage .txt",
+    "FileSize": 1100,
+    "FileTransferTime": 0.7169,
+    "EncryptionTime": 109.9141,
+    "Time": "12/05/2026 13:34:23"
+  },
+  {
+    "Name": "crypto test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test.txt",
+    "FileSize": 30,
+    "FileTransferTime": 0.7766,
+    "EncryptionTime": 102.2919,
+    "Time": "12/05/2026 13:34:23"
+  },
+  {
+    "Name": "crypto test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test_storage_1.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test_storage_1.txt",
+    "FileSize": 1100,
+    "FileTransferTime": 0.6659,
+    "EncryptionTime": 106.5968,
+    "Time": "12/05/2026 13:34:24"
+  },
+  {
+    "Name": "crypto test",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test_storage_3.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test_storage_3.txt",
+    "FileSize": 1100,
+    "FileTransferTime": 0.611,
+    "EncryptionTime": 110.1182,
+    "Time": "12/05/2026 13:34:24"
+  },
+  {
+    "Name": "jojojojo=",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test.txt",
+    "FileSize": 30,
+    "FileTransferTime": 0.6399,
+    "EncryptionTime": 104.2496,
+    "Time": "12/05/2026 13:34:28"
+  },
+  {
+    "Name": "jojojojo=",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test_storage_1.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test_storage_1.txt",
+    "FileSize": 1100,
+    "FileTransferTime": 0.6741,
+    "EncryptionTime": 110.2318,
+    "Time": "12/05/2026 13:34:28"
+  },
+  {
+    "Name": "jojojojo=",
+    "FileSource": "C:\\Users\\dell\\Desktop\\TestSource\\test_storage_3.txt",
+    "FileTarget": "C:\\Users\\dell\\Desktop\\TestTarget\\test_storage_3.txt",
+    "FileSize": 1100,
+    "FileTransferTime": 0.6126,
+    "EncryptionTime": 105.2427,
+    "Time": "12/05/2026 13:34:28"
+  }
+]

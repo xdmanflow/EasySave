@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using EasySave.Languages;
 using EasySave.Models;
 using EasySave.Services;
@@ -40,10 +41,48 @@ namespace EasySave
             strategy.Execute(job, _daily, _state, _settings);
         }
 
+        public Task RunJobAsync(int index)
+        {
+            var job = _jobs[index];
+
+            if (BusinessSoftwareDetector.IsRunning(_settings.BusinessSoftware))
+                throw new InvalidOperationException($"Job '{job.Name}' stopped: business software detected.");
+
+            job.State = JobState.Running;
+            job.Progress = 0;
+            job.TotalSizeCopied = 0;
+            job.PauseEvent.Set();
+
+            return Task.Run(() =>
+            {
+                try
+                {
+                    IBackupStrategy strategy = job.Type == BackupType.Full
+                        ? new FullBackupStrategy()
+                        : new DifferentialBackupStrategy();
+
+                    strategy.Execute(job, _daily, _state, _settings);
+
+                    if (job.State != JobState.Stopped)
+                    {
+                        job.State = JobState.Completed;
+                        job.Progress = 100.0;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    job.State = JobState.Error;
+                    Console.Error.WriteLine($"Error in job {job.Name}: {ex.Message}");
+                }
+            });
+        }
+
         public void RunAllJobs()
         {
             if (_jobs.Count == 0) { Console.WriteLine(_lang.Get("run_all_none")); return; }
-            for (int i = 0; i < _jobs.Count; i++) RunJob(i);
+            List<Task> tasks = new List<Task>();
+            for (int i = 0; i < _jobs.Count; i++)
+                tasks.Add(RunJobAsync(i));
         }
 
         public void RunFromArgument(string arg)
@@ -53,8 +92,35 @@ namespace EasySave
                 if (idx < 1 || idx > _jobs.Count)
                     Console.Error.WriteLine($"Index {idx} out of range.");
                 else
-                    RunJob(idx - 1);
+                    RunJobAsync(idx - 1);
             }
+        }
+
+        public void PauseJob(int index)
+        {
+            var job = _jobs[index];
+            if (job.State == JobState.Running)
+            {
+                job.State = JobState.Paused;
+                job.PauseEvent.Reset();
+            }
+        }
+
+        public void ResumeJob(int index)
+        {
+            var job = _jobs[index];
+            if (job.State == JobState.Paused)
+            {
+                job.State = JobState.Running;
+                job.PauseEvent.Set();
+            }
+        }
+
+        public void StopJob(int index)
+        {
+            var job = _jobs[index];
+            job.State = JobState.Stopped;
+            job.PauseEvent.Set();
         }
 
         private static IEnumerable<int> ParseArgument(string arg)

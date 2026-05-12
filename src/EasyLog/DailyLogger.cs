@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Net.Http;
+using System.Text;
 using System.Text.Json;
 using System.Xml.Serialization;
 
@@ -10,22 +12,43 @@ namespace EasyLog
     {
         private readonly string _folder;
         private LogFormat _format;
+        private DockerLogMode _dockerMode;
+        private string _dockerUrl;
+        private static readonly HttpClient _http = new();
         private static readonly JsonSerializerOptions _json = new() { WriteIndented = true };
 
-        public DailyLogger(string folder, LogFormat format = LogFormat.Json)
+        public DailyLogger(string folder, LogFormat format = LogFormat.Json,
+            DockerLogMode dockerMode = DockerLogMode.Local, string dockerUrl = "")
         {
             _folder = folder;
             _format = format;
+            _dockerMode = dockerMode;
+            _dockerUrl = dockerUrl;
             Directory.CreateDirectory(folder);
         }
 
         public void SetFormat(LogFormat format) => _format = format;
 
+        public void SetDockerConfig(DockerLogMode mode, string url)
+        {
+            _dockerMode = mode;
+            _dockerUrl = url;
+        }
+
         public void Log(LogEntry entry)
         {
             entry.Time = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
-            if (_format == LogFormat.Json) LogJson(entry);
-            else LogXml(entry);
+
+            if (_dockerMode == DockerLogMode.Local || _dockerMode == DockerLogMode.Both)
+            {
+                if (_format == LogFormat.Json) LogJson(entry);
+                else LogXml(entry);
+            }
+
+            if (_dockerMode == DockerLogMode.Remote || _dockerMode == DockerLogMode.Both)
+            {
+                SendToDocker(entry);
+            }
         }
 
         private void LogJson(LogEntry entry)
@@ -54,6 +77,18 @@ namespace EasyLog
             list.Add(entry);
             using var w = new StreamWriter(path);
             ser.Serialize(w, list);
+        }
+
+        private void SendToDocker(LogEntry entry)
+        {
+            if (string.IsNullOrWhiteSpace(_dockerUrl)) return;
+            try
+            {
+                string json = JsonSerializer.Serialize(entry, _json);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                _http.PostAsync(_dockerUrl, content).Wait();
+            }
+            catch { }
         }
     }
 }

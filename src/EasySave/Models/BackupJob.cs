@@ -1,7 +1,10 @@
 using System.Text.Json.Serialization;
+using System.Threading;
 
 namespace EasySave.Models
 {
+    public enum JobState { Idle, Running, Paused, Stopped, Completed, Error }
+
     public class BackupJob
     {
         [JsonPropertyName("Name")]
@@ -15,5 +18,20 @@ namespace EasySave.Models
 
         [JsonPropertyName("Type")]
         public BackupType Type { get; set; } = BackupType.Full;
+
+        [JsonIgnore]
+        public JobState State { get; set; } = JobState.Idle;
+
+        [JsonIgnore]
+        public double Progress { get; set; } = 0.0;
+
+        [JsonIgnore]
+        public long TotalFilesSize { get; set; }
+
+        [JsonIgnore]
+        public long TotalSizeCopied { get; set; }
+
+        [JsonIgnore]
+        public ManualResetEventSlim PauseEvent { get; } = new ManualResetEventSlim(true);
     }
 }
